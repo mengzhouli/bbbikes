@@ -1,13 +1,16 @@
 * {
   padding: 0;
   margin: 0;
+  box-sizing: content-box;
+  &:before, &:after {
+    box-sizing: content-box;
+  }
 }
 
 .stuff {
   position: fixed;
-  top: 50%;
+  top: 40%;
   left: 50%;
-  box-sizing: initial !important;
 }
 
 #letter {
