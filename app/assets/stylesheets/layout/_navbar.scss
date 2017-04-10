@@ -54,16 +54,29 @@
   padding: 0 20px;
   border-radius: 20em;
   line-height: 40px;
-  background-color: #D23333;
-  color: white;
   font-size: 14px;
-  border: 2px solid #D23333;
+  &#login {
+    background-color:white;
+    border: 2px solid #C1C1C1;
+    color: #818286;
+    &:hover {
+      color: #505152;
+      background: #EAEEEE;
+      border-color: #EAEEEE;
+    }
+  }
+  &#signup {
+    background-color: #4AAF45;
+    border: 2px solid #4AAF45;
+    color: white;
+    &:hover {
+      color: white;
+      background: #3F943C;
+      border-color: #3F943C;
+    }
+  }
 }
-.navbar-wagon-button:hover {
-  color: white;
-  background: #D23333;
-  border-color: #ac2626;
-}
+
 
 /* Navbar search form */
 .navbar-wagon-search {
