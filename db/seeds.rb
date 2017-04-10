@@ -5,6 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+meng = User.create(email: "mengzhou.li@gmail.com", password: "pppassword")
+
+geoff = User.create(email: "geoff@vonture.net", password: "pppassword")
+
+ashraf = User.create(email: "ashraf.caspian@gmail.com", password: "pppassword")
+
+dana = User.create(email: "d.alibran@gmail.com", password: "pppassword")
+
 
 adjectives = ["Amazing", "Fancy", "Trendy", "Retro", "Lightweight", "Flashy", "Durable", "Foldable", "Awesome", "Funky"]
 
