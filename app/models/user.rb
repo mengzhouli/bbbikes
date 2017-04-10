@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :bikes, dependent: :destroy
   has_many :bookings
   has_many :reviews, through: :bikes
+  mount_uploader :photo, PhotoUploader
 
   
 end
