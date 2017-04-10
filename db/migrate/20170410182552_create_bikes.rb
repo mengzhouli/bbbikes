@@ -3,9 +3,10 @@ class CreateBikes < ActiveRecord::Migration[5.0]
     create_table :bikes do |t|
       t.string :brand
       t.string :model
-      t.string :bike_type
+      t.string :bike_kind
       t.string :height_range
       t.string :photos
+      t.text :description
       t.boolean :has_helmet
       t.boolean :has_lock
       t.boolean :has_lights
