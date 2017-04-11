@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'bikes/index'
 
   devise_for :users do
     resources :bikes, only: [:new, :create, :update, :edit, :destroy]
