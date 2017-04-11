@@ -1,0 +1,11 @@
+.list {
+  width: 50%;
+  &#right {
+    float: right;
+    height: 100vh;
+    background-color: grey;
+  }
+  &#left {
+    float:left;
+  }
+}
