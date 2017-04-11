@@ -29,8 +29,7 @@ apollo = Bike.new(brand: "Apollo", model: "Syncro", bike_kind: "Tandem", height_
 apollo.user = ashraf
 apollo.save!
 
-
-adjectives = ["Amazing", "Fancy", "Trendy", "Retro", "Lightweight", "Flashy", "Durable", "Foldable", "Awesome", "Funky"]
+# removed adjectives array
 
 bicycles = [
   { :brand => "Colnago",
