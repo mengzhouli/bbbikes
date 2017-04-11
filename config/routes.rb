@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :users do
     resources :bikes, only: [:new, :create, :update, :edit, :destroy]
   end
