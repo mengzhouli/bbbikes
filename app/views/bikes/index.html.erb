@@ -1,0 +1,44 @@
+<div class="list" id="left">
+  <ul>
+    <% @bikes.each do |bike| %>
+      <li>
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://unsplash.it/800/600?image=39');">
+          <div class="card-category"><%= bike.bike_kind %></div>
+          <div class="card-description">
+            <h2><%= bike.brand %> | <%= bike.model %></h2>
+            <p><%= bike.description %></p>
+          </div>
+          <img class="card-user avatar" src="#">
+          <a class="card-link" href="#" ></a>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<div class="list" id="right">
+</div>
+
+<% content_for(:js) do %>
+  <script async defer src='https://maps.googleapis.com/maps/api/js?key=<%= ENV['google_maps_key'] %>&callback=initMap'>
+  </script>
+  <script>
+    function initMap() {
+      var myLatLng = {lat: 45.5259795,lng: -73.5973024};
+
+      var map = new google.maps.Map(document.getElementById('right'), {
+        zoom: 18,
+        center: myLatLng
+      });
+
+      var marker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+        title: 'Hello World!'
+      });
+    }
+  </script>
+<% end %>
+
+
+
