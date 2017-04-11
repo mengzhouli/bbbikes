@@ -31,92 +31,112 @@ apollo = Bike.new(brand: "Apollo", model: "Syncro", bike_kind: "Tandem", height_
 apollo.user = ashraf
 apollo.save!
 
-
-adjectives = ["Amazing", "Fancy", "Trendy", "Retro", "Lightweight", "Flashy", "Durable", "Foldable", "Awesome", "Funky"]
-
-bicycles = [
+bicycles_data = [
   { :brand => "Colnago",
     :model => "Arabesque",
-    :type => "Road",
-    remote_photo_url: "http://res.cloudinary.com/dcomjubrq/image/upload/v1491861997/Colnago_Arabesque_jylld2.jpg",
+    :bike_kind => "Road",
+    location: "Montreal",
     :height_range => ["M", "L", "XL"]
   },
   { :brand => "Parlee",
     :model => "Chebacco",
-    :type => "Hybrid",
-    remote_photo_url: "http://res.cloudinary.com/dcomjubrq/image/upload/v1491861998/Parlee_Chebacco_gskzwe.jpg",
+    :bike_kind => "Hybrid",
+    location: "Montreal",
     :height_range => ["M", "L", "XL"]
   },
   { :brand => "Giant",
     :model => "TCR Advanced SL O",
-    :type => "Road",
-    remote_photo_url: "http://res.cloudinary.com/dcomjubrq/image/upload/v1491861997/Giant_TCR_Advanced_SL_O_oanr2r.jpg",
+    :bike_kind => "Road",
+    location: "Montreal",
     :height_range => ["S", "M", "L", "XL"]
   },
   { :brand => "Jamis",
     :model => "Xenis Comp Femme",
-    :type => "Racing",
-    remote_photo_url: "http://res.cloudinary.com/dcomjubrq/image/upload/v1491861997/Jamis_Xenis_Comp_Femme_bje4th.jpg",
+    :bike_kind => "Racing",
+    location: "Montreal",
     :height_range => ["M", "L", "XL"]
   },
   { :brand => "Trek",
     :model => "Emonda ALR",
-    :type => "Racing",
-    remote_photo_url: "http://res.cloudinary.com/dcomjubrq/image/upload/v1491861998/Trek_Emonda_ALR_tib7ju.jpg",
+    :bike_kind => "Racing",
+    location: "Montreal",
     :height_range => ["M", "L", "XL"]
   },
   { :brand => "Brompton",
-    :model => "S Type",
-    :type => "Foldable",
-    remote_photo_url: "http://res.cloudinary.com/dcomjubrq/image/upload/v1491861997/Brompton_S_Type_xilav5.jpg",
+    :model => "S bike_kind",
+    :bike_kind => "Foldable",
+    location: "Montreal",
     :height_range => ["S", "M", "L", "XL"]
   },
   { :brand => "Tern",
     :model => "Verge",
-    :type => "Foldable",
-    remote_photo_url: "http://res.cloudinary.com/dcomjubrq/image/upload/v1491861998/Tern_Verge_yyha5v.jpg",
+    :bike_kind => "Foldable",
+    location: "Montreal",
     :height_range => ["S", "M", "L", "XL"]
   },
   { :brand => "Canondale",
     :model => "Bad Habit",
-    :type => "Mountain",
-    remote_photo_url: "http://res.cloudinary.com/dcomjubrq/image/upload/v1491861997/Canondale_Bad_Habit_v2fypl.jpg",
+    :bike_kind => "Mountain",
+    location: "Montreal",
     :height_range => ["S", "M", "L", "XL"]
   },
   { :brand => "Liv",
     :model => "Lust Advanced 1",
-    :type => "Mountain",
-    remote_photo_url: "http://res.cloudinary.com/dcomjubrq/image/upload/v1491861998/Liv_Lust_Advanced_1_xx0kmj.jpg",
+    :bike_kind => "Mountain",
+    location: "Montreal",
     :height_range => ["S", "M", "L", "XL"]
   },
   { :brand => "Fly",
     :model => "Neutron",
-    :type => "BMX",
-    remote_photo_url: "http://res.cloudinary.com/dcomjubrq/image/upload/v1491861997/Fly_Neutron_pu5jjc.jpg",
+    :bike_kind => "BMX",
+    location: "Montreal",
     :height_range => ["S", "M", "L", "XL"]
   },
   { :brand => "Marin",
     :model => "Fairfax",
-    :type => "City",
-    remote_photo_url: "http://res.cloudinary.com/dcomjubrq/image/upload/v1491861997/Marin_Fairfax_prjjbf.jpg",
+    :bike_kind => "City",
+    location: "Montreal",
     :height_range => ["S", "M", "L", "XL"]
   },
   { :brand => "Faraday",
     :model => "Porteur",
-    :type => "City",
-    remote_photo_url: "http://res.cloudinary.com/dcomjubrq/image/upload/v1491861997/Faraday_Porteur_jlzbva.jpg",
+    :bike_kind => "City",
+    location: "Montreal",
     :height_range => ["S", "M", "L", "XL"]
   },
   { :brand => "Apollo",
     :model => "Syncro",
-    :type => "Tandem",
-    remote_photo_url: "http://res.cloudinary.com/dcomjubrq/image/upload/v1491862127/Apollo_Syncro_mph3wf.jpg",
+    :bike_kind => "Tandem",
+    location: "Montreal",
     :height_range => ["L", "XL"]
   },
   { :brand => "Brooklyn Bicycle Co.",
     :model => "Wythe",
-    :type => "City",
-    remote_photo_url: "http://res.cloudinary.com/dcomjubrq/image/upload/v1491862127/Brooklyn_Bicycle_Co._Wythe_nkpjvf.jpg",
+    :bike_kind => "City",
+    location: "Montreal",
     :height_range => ["S", "M", "L", "XL"]
   }
 ]
+
+# photos = ["http://res.cloudinary.com/dcomjubrq/image/upload/v1491861997/Colnago_Arabesque_jylld2.jpg",
+# "http://res.cloudinary.com/dcomjubrq/image/upload/v1491861998/Parlee_Chebacco_gskzwe.jpg",
+# "http://res.cloudinary.com/dcomjubrq/image/upload/v1491861997/Giant_TCR_Advanced_SL_O_oanr2r.jpg",
+# "http://res.cloudinary.com/dcomjubrq/image/upload/v1491861997/Jamis_Xenis_Comp_Femme_bje4th.jpg",
+# "http://res.cloudinary.com/dcomjubrq/image/upload/v1491861998/Trek_Emonda_ALR_tib7ju.jpg",
+# "http://res.cloudinary.com/dcomjubrq/image/upload/v1491861997/Brompton_S_bike_kind_xilav5.jpg",
+# "http://res.cloudinary.com/dcomjubrq/image/upload/v1491861998/Tern_Verge_yyha5v.jpg",
+# "http://res.cloudinary.com/dcomjubrq/image/upload/v1491861997/Canondale_Bad_Habit_v2fypl.jpg",
+# "http://res.cloudinary.com/dcomjubrq/image/upload/v1491861998/Liv_Lust_Advanced_1_xx0kmj.jpg",
+# "http://res.cloudinary.com/dcomjubrq/image/upload/v1491861997/Fly_Neutron_pu5jjc.jpg",
+# "http://res.cloudinary.com/dcomjubrq/image/upload/v1491861997/Marin_Fairfax_prjjbf.jpg",
+# "http://res.cloudinary.com/dcomjubrq/image/upload/v1491861997/Faraday_Porteur_jlzbva.jpg",
+# "http://res.cloudinary.com/dcomjubrq/image/upload/v1491862127/Apollo_Syncro_mph3wf.jpg",
+# "http://res.cloudinary.com/dcomjubrq/image/upload/v1491862127/Brooklyn_Bicycle_Co._Wythe_nkpjvf.jpg"]
+
+bicycles_data.each do |bike_attributes|
+  bike = Bike.new(bike_attributes)
+  bike.user_id = User.pluck(:id).sample
+  bike.save!
+end
+
+
