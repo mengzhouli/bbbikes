@@ -13,6 +13,22 @@ ashraf = User.create(email: "ashraf.caspian@gmail.com", password: "pppassword")
 
 dana = User.create(email: "d.alibran@gmail.com", password: "pppassword")
 
+giant = Bike.new(brand: "Giant", model: "TCR Advanced SL O", bike_kind: "Road", height_range: "M", description: "Everyday durable bike", location: "Le-Plateau, Montreal, QC")
+giant.user = dana
+giant.save!
+
+trek = Bike.new(brand: "Trek", model: "Emonda ALR", bike_kind: "Racing", height_range: "XL", description: "High end performance bike for a large person", location: "Ville-Marie, Montreal, QC")
+trek.user = ashraf
+trek.save!
+
+fara = Bike.new(brand: "Faraday", model: "Porteur", bike_kind: "City", height_range: "S", description: "Commuter for a small frame", location: "Ville-Marie, Montreal, QC")
+trek.user = ashraf
+trek.save!
+
+apollo = Bike.new(brand: "Apollo", model: "Syncro", bike_kind: "Tandem", height_range: "L", description: "Take your relationship for a ride!", location: "Ville-Marie, Montreal, QC")
+apollo.user = ashraf
+apollo.save!
+
 
 adjectives = ["Amazing", "Fancy", "Trendy", "Retro", "Lightweight", "Flashy", "Durable", "Foldable", "Awesome", "Funky"]
 

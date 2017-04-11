@@ -1,0 +1,9 @@
+<%= simple_form_for(@user) do |f| %>
+  <%= f.input :email %>
+  <%= f.input :password %>
+  <%= f.association :bookings %>
+  <%= f.association :reviews %>
+  <%= f.input :photo %>
+  <%= f.input :photo_cache, as: :hidden %>
+  <%= f.submit %>
+<% end %>

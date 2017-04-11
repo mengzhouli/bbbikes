@@ -9,6 +9,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'redis'
 
 gem 'sass-rails'
+gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'uglifier'
 gem 'bootstrap-sass'
@@ -19,6 +20,8 @@ gem 'devise'
 gem 'cloudinary'
 gem 'carrierwave', '~> 0.11.2'
 gem 'omniauth-facebook'
+gem 'attachinary', github: 'assembler/attachinary'
+gem 'jquery-fileupload-rails'
 
 
 group :development, :test do
