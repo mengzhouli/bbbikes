@@ -14,7 +14,7 @@
         <%= f.input :has_lights, label: "Lights", input_html: { checked: @bike.has_lights } %>
         <%= f.input :has_basket, label: "Basket", input_html: { checked: @bike.has_basket } %>
         <%= f.input :has_bell, label: "Bell", input_html: { checked: @bike.has_bell } %>
-       <!-- need to add photo attachinary -->
+        <%= f.input :photos, as: :attachinary %>
         <%= f.button :submit, class: "btn btn-success" %>
       <% end %>
     </div>
