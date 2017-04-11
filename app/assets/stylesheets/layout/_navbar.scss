@@ -63,6 +63,7 @@
       color: #505152;
       background: #EAEEEE;
       border-color: #EAEEEE;
+      text-decoration: none;
     }
   }
   &#signup {
@@ -73,6 +74,18 @@
       color: white;
       background: #3F943C;
       border-color: #3F943C;
+      text-decoration: none;
+    }
+  }
+   &#post {
+    background-color: #F62C3E;
+    border: 2px solid #F62C3E;
+    color: white;
+    &:hover {
+      color: white;
+      background: #E12939;
+      border-color: #E12939;
+      text-decoration: none;
     }
   }
 }
