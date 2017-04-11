@@ -1,6 +1,3 @@
-<h1>Bikes#index</h1>
-<p>Find me in app/views/bikes/index.html.erb</p>
-
 <div class="list" id="left">
   <ul>
     <% @bikes.each do |bike| %>
@@ -20,34 +17,28 @@
 </div>
 
 <div class="list" id="right">
- <script>
+</div>
+
+<% content_for(:js) do %>
+  <script async defer src='https://maps.googleapis.com/maps/api/js?key=<%= ENV['google_maps_key'] %>&callback=initMap'>
+  </script>
+  <script>
     function initMap() {
-      function getLatLng() {
-        var geocoder = new google.maps.Geocoder();
-        var query = "5333 Casgrain Ave #102, Montreal, QC H2T 1X6";
-        return results = geocoder.geocode( { 'address': query }, function(results, status) {
-          if (status == google.maps.GeocoderStatus.OK) {
-            var latLng = results[0].geometry.location;
-            alert('Geocode successful ' + latLng);
-            return latLng
-          } else {
-            alert("Geocode was not successful for the following reason: " + status);
-          }
-        });
-      }
-      console.log(getLatLng());
+      var myLatLng = {lat: 45.5259795,lng: -73.5973024};
+
       var map = new google.maps.Map(document.getElementById('right'), {
-        zoom: 4,
-        center:
+        zoom: 18,
+        center: myLatLng
       });
+
       var marker = new google.maps.Marker({
-        position:
-        map: map
+        position: myLatLng,
+        map: map,
+        title: 'Hello World!'
       });
     }
   </script>
-</div>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD45OqT5LNV6XWQ9cUXKdeLORsaRav0hmE&callback=initMap">
-</script>
+<% end %>
+
 
 
