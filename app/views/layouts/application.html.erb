@@ -13,8 +13,6 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-
-
     <%= yield %>
     <%= javascript_include_tag 'application' %>
     <%= yield(:js) %>
