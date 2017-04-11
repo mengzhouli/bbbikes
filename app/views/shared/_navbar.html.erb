@@ -48,16 +48,16 @@
         </ul>
       </div>
     </div>
+    <!-- Button (call-to-action) -->
+    <%= link_to t(".top_call_to_action", default: "Post a bike"), new_bike_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
 
   <% else %>
 
     <!-- Login text link -->
-    <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link", id: "login" %>
-    <%= link_to t(".sign_up", default: "Signup"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link", id: "signup" %>
+    <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-button", id: "login" %>
+    <%= link_to t(".sign_up", default: "Signup"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-button", id: "signup" %>
   <% end %>
 
-  <!-- Button (call-to-action) -->
-  <%= link_to t(".top_call_to_action", default: "Post stuff"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %>
 </div>
 
   <!-- Dropdown appearing on mobile only -->
