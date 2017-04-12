@@ -1,88 +1,19 @@
-<div class="place">
-  <div class="stuff">
-    <div id="animation">
-        <div class="bike">
-            <div class="bell">
-                <div class="ringer">
-                    <div class="lever"></div>
-                </div>
-                <div class="audio">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-                <div class="stand"></div>
-            </div>
-            <div class="front wheel">
-                <div class="rim">
-                    <div class="air"></div>
-                </div>
-                <div class="hub"></div>
-                <div class="spokes">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-            </div>
-            <div class="frame">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div class="small"></div>
-                <div></div>
-                <div></div>
-                <div class="small"></div>
-                <div class="small"></div>
-            </div>
-            <div class="seat">
-                <div class="support"></div>
-                <div class="saddle"></div>
-            </div>
-            <div class="handlebars">
-                <div class="frameConnector"></div>
-                <div class="handle"></div>
-            </div>
-            <div class="pedals">
-                <div class="gear">
-                    <div class="hub"></div>
-                    <div class="struts">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                </div>
-                <div class="front pedal">
-                    <div class="footpad"></div>
-                </div>
-                <div class="back pedal">
-                    <div class="footpad"></div>
-                </div>
-            </div>
-            <div class="back wheel">
-                <div class="rim">
-                    <div class="air"></div>
-                </div>
-                <div class="hub"></div>
-                <div class="gear"></div>
-                <div class="spokes">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-            </div>
-        </div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="logo-div">
+        <%= image_tag 'bicycle1600.png', id:'logo-pic' %>
+      </div>
     </div>
-  </div>
+    <div class="col-md-6">
+    <div class="text-box text-center">
+      <h1>You'll Go Far.</h1>
+      <h2>BBBikes </h2> <h6>Montréal's Best Bike Sharing Platform</h6>
+      <br>
+      <%= link_to "View All Bikes", bikes_path, class: "navbar-wagon-item navbar-wagon-button all-bikes", id: "signup" %>
+   </div>
 </div>
+
+
+
+

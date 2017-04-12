@@ -2,3 +2,29 @@
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
+
+
+.text-box {
+  padding-top: 50px;
+  & h1 {
+    font-weight: bold;
+    font-size: 75px;
+  }
+  & h5 {
+    font-weight: lighter;
+    display: inline;
+  }
+  & h3 {
+    display: inline;
+  }
+}
+
+#logo-pic {
+  width: 70%;
+}
+
+.all-bikes {
+  padding: 15px;
+  width: 50% !important;
+}
+

@@ -1,1 +1,12 @@
 // Your footer style
+.top {
+  border-top: 1px solid
+}
+
+.footer-fixed {
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  z-index: 1;
+  width: 100%;
+}
