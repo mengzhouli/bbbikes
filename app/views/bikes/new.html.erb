@@ -3,9 +3,9 @@
     <div class="form-box">
       <%= simple_form_for(@bike) do |f| %>
         <%= f.error_notification %>
-        <%= f.input :brand, label: "Brand", placeholder: "Giant" %>
-        <%= f.input :model, label: "Model", placeholder: "Avow Advanced Pro 1" %>
-        <%= f.input :bike_kind, label: "Type", :collection => %w[Road Mountain Cruiser Folding Fixie Hybrid Cargo Tandem Cyclocross BMX Triathlon Touring Unique Electric Recumbent Fat] %>
+        <%= f.input :brand, label: "Brand", collection: => Bike.all.select("brand)" %>
+        <%= f.input :model, label: "Model", :collection => Bike.all.select("model") %>
+        <%= f.input :bike_kind, label: "Type", :collection => Bike.all.select("bike_kind") %>
         <%= f.input :height_range, label: "Rider Height", :collection => %w[140cm 145cm 150cm 155cm 160cm 165cm 170cm 175cm 180cm 185cm 190cm 195cm 200cm] %>
         <%= f.input :location, label: "Give a full valid drop-off and pick-up address", placeholder: "5333 Casgrain Ave, Montreal, QC H2T 1X6" %>
         <%= f.input :description, as: :text,  label: "Describe the bike", placeholder: "Giant’s Liv series of bikes are built ground-up with female riders in mind. This makes it a little easier to find that Goldilocks frame size. This Liv Avow model boasts many of the neatly-integrated features that are now superbike hallmarks: front hydration, top-tube bento, behind-the-saddle bottle mount AND a downtube aero bottle. Plus we love that stand-out paint job!" %>

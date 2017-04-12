@@ -5,7 +5,6 @@ class BikesController < ApplicationController
   def index
 
     @bikes = Bike.all
-    # @brands = Bike::SORTED_BRANDS
     @bikes = Bike.where.not(latitude: nil, longitude: nil)
     # only grab bikes where they have a valid address
     # flash[:alert] = "You are on the Bikes main page"
@@ -36,6 +35,19 @@ class BikesController < ApplicationController
       render :new
     end
   end
+
+  def edit
+    @bike = Bike.find(params[:id])
+  end
+
+    def update
+    if @bike.update(bike_params)
+      redirect_to bike_path(@bike)
+    else
+      render :edit
+    end
+  end
+end
 
   private
 

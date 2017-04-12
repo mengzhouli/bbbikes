@@ -44,14 +44,6 @@ apollo.user = ashraf
 apollo.photo_urls = photos_urls
 apollo.save!
 
-<<<<<<< HEAD
-# removed adjectives array
-=======
-
-
-adjectives = ["Amazing", "Fancy", "Trendy", "Retro", "Lightweight", "Flashy", "Durable", "Foldable", "Awesome", "Funky"]
->>>>>>> master
-
 bicycles = [
   { :brand => "Colnago",
     :model => "Arabseque",
