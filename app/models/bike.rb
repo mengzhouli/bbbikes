@@ -7,4 +7,7 @@ class Bike < ApplicationRecord
   validates :height_range, presence: true
   validates :location, presence: true
   has_attachments :photos, maximum: 4
+  geocoded_by :location
+  after_validation :geocode, if: :location_changed?
+
 end
