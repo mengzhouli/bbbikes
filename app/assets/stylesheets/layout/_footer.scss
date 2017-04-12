@@ -1,1 +1,32 @@
 // Your footer style
+
+
+.footer-fixed {
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  z-index: 1;
+  width: 100%;
+  background-color: #2C2C2C;
+  height: 60px;
+  color: white;
+  & p {
+    vertical-align: center;
+    font-weight: lighter;
+    padding-top: 20px;
+    padding-left: 20px;
+    position: absolute;
+  }
+}
+
+.wrapper-foot {
+  position: relative;
+}
+
+#mtl {
+  height: 40px;
+  width: 40px;
+  right: 3%;
+  top: 18%;
+  position: absolute;
+}

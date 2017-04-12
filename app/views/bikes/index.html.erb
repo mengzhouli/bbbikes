@@ -1,3 +1,42 @@
+<<<<<<< HEAD
+<div class='full-wrapper'>
+  <div class="list" id="left">
+    <% @bikes.each do |bike| %>
+      <div class="product">
+        <%= cl_image_tag bike.photos[1].path, class: "product-image" %>
+        <div class='product-body'>
+          <h3><%= bike.brand %></h3><h4><%= bike.model %></h4>
+          <p><%= bike.description %></p>
+        </div>
+        <ul class="list-inline product-controls product-controls-hidden hidden-sm hidden-xs">
+          <% if bike.has_helmet %>
+            <li data-tooltip="Has Helmet" data-tooltip-position="top">
+              <i class="fa fa-shield" aria-hidden="true"></i>
+            </li>
+          <% end %>
+          <% if bike.has_lock %>
+            <li data-tooltip="Has Lock" data-tooltip-position="top">
+              <i class="fa fa-lock" aria-hidden="true"></i>
+            </li>
+          <% end %>
+          <% if bike.has_bell %>
+            <li data-tooltip="Has Bell" data-tooltip-position="top">
+              <i class="fa fa-bell" aria-hidden="true"></i>
+            </li>
+          <% end %>
+          <% if bike.has_basket %>
+            <li data-tooltip="Has Basket" data-tooltip-position="top">
+              <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+            </li>
+          <% end %>
+          <% if bike.has_lights %>
+            <li data-tooltip="Has Lights" data-tooltip-position="top">
+              <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
+            </li>
+          <% end %>
+        </ul>
+         <%= link_to "Book", bike_path(bike.id), class: "btn btn-success btn-hidden" %>
+
 <div class="list" id="left">
   <% @bikes.each do |bike| %>
     <div class="product">
@@ -8,41 +47,12 @@
         <h3><%= bike.brand %></h3><h4><%= bike.model %></h4>
         <p><%= bike.description %></p>
       </div>
-      <ul class="list-inline product-controls product-controls-hidden hidden-sm hidden-xs">
-        <% if bike.has_helmet %>
-          <li data-tooltip="Has Helmet" data-tooltip-position="top">
-            <i class="fa fa-shield" aria-hidden="true"></i>
-          </li>
-        <% end %>
-        <% if bike.has_lock %>
-          <li data-tooltip="Has Lock" data-tooltip-position="top">
-            <i class="fa fa-lock" aria-hidden="true"></i>
-          </li>
-        <% end %>
-        <% if bike.has_bell %>
-          <li data-tooltip="Has Bell" data-tooltip-position="top">
-            <i class="fa fa-bell" aria-hidden="true"></i>
-          </li>
-        <% end %>
-        <% if bike.has_basket %>
-          <li data-tooltip="Has Basket" data-tooltip-position="top">
-            <i class="fa fa-shopping-basket" aria-hidden="true"></i>
-          </li>
-        <% end %>
-        <% if bike.has_lights %>
-          <li data-tooltip="Has Lights" data-tooltip-position="top">
-            <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
-          </li>
-        <% end %>
-      </ul>
-       <%= link_to "Book", bike_path(bike.id), class: "btn btn-success btn-hidden" %>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
+
+
+  <div class="list" id="right"></div>
 </div>
-
-
-<div class="list" id="right"></div>
-
 
 <!-- below is for dynamic map from lecture -->
 
