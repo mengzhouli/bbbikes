@@ -5,7 +5,6 @@ class BikesController < ApplicationController
   def index
     # @bikes = Bike.where.not(latitude: nil, longitude: nil)
     @bikes = Bike.all
-    @bike = Bike.find(1)
     # only grab bikes where they have a valid address
     # flash[:alert] = "You are on the Bikes main page"
     @hash = Gmaps4rails.build_markers(@bikes) do |bike, marker|
