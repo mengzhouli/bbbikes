@@ -5,29 +5,45 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-meng = User.create(email: "mengzhou.li@gmail.com", password: "pppassword")
 
-geoff = User.create(email: "geoff@vonture.net", password: "pppassword")
 
-ashraf = User.create(email: "ashraf.caspian@gmail.com", password: "pppassword")
+#create random photos array for bike#show testing
+photos_urls = []
+# 4.times do
+#  photos_urls << 'https://unsplash.it/300/200/?random'
+# end
 
-dana = User.create(email: "d.alibran@gmail.com", password: "pppassword")
 
-giant = Bike.new(brand: "Giant", model: "TCR Advanced SL O", bike_kind: "Road", height_range: "M", description: "Everyday durable bike", location: "Le-Plateau, Montreal, QC")
+#create users
+meng = User.create(email: "mengzhou.li@gmail.com", password: "pppassword", first_name: "Meng" )
+geoff = User.create(email: "geoff@vonture.net", password: "pppassword", first_name: "Geoff")
+ashraf = User.create(email: "ashraf.caspian@gmail.com", password: "pppassword", first_name: "Ashraf")
+dana = User.create(email: "d.alibran@gmail.com", password: "pppassword", first_name: "Dana", last_name: "Alibrandi")
+
+#create bike, associate to user, associate random photo array to bike
+giant = Bike.new(brand: "Giant", model: "TCR Advanced SL O", bike_kind: "Road", height_range: "M", description: "Everyday durable bike", location: "Le-Plateau, Montreal, QC", has_lock: true, has_helmet: true, has_basket: true)
 giant.user = dana
+giant.photo_urls = photos_urls
 giant.save!
+
 
 trek = Bike.new(brand: "Trek", model: "Emonda ALR", bike_kind: "Racing", height_range: "XL", description: "High end performance bike for a large person", location: "Ville-Marie, Montreal, QC")
 trek.user = ashraf
+trek.photo_urls = photos_urls
 trek.save!
 
+
 fara = Bike.new(brand: "Faraday", model: "Porteur", bike_kind: "City", height_range: "S", description: "Commuter for a small frame", location: "Ville-Marie, Montreal, QC")
-trek.user = ashraf
-trek.save!
+fara.user = ashraf
+fara.photo_urls = photos_urls
+fara.save!
+
 
 apollo = Bike.new(brand: "Apollo", model: "Syncro", bike_kind: "Tandem", height_range: "L", description: "Take your relationship for a ride!", location: "Ville-Marie, Montreal, QC")
 apollo.user = ashraf
+apollo.photo_urls = photos_urls
 apollo.save!
+
 
 
 adjectives = ["Amazing", "Fancy", "Trendy", "Retro", "Lightweight", "Flashy", "Durable", "Foldable", "Awesome", "Funky"]
@@ -104,3 +120,5 @@ bicycles = [
     :height_range => ["S", "M", "L", "XL"]
   }
 ]
+
+
