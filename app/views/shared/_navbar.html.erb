@@ -45,6 +45,11 @@
             <% end %>
           </li>
           <li>
+            <%= link_to profile_bookings_path do %>
+              <i class="fa fa-calendar-o"></i> <%= t(".booking", default: "See your bookings") %>
+            <% end %>
+          </li>
+          <li>
             <%= link_to "#" do %>
               <i class="fa fa-home"></i>  <%= t(".profile", default: "Home") %>
             <% end %>
