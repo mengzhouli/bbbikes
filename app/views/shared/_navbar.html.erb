@@ -31,6 +31,8 @@
         <% avatar_url = current_user.facebook_picture_url || current_user.photo.url(:bright_face) %>
         <% if !avatar_url.nil? %>
           <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+        <% else %>
+          <img src="http://placehold.it/50x50" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown" >
         <% end %>
 
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
@@ -42,6 +44,11 @@
           <li>
             <%= link_to edit_user_registration_path do %>
               <i class="fa fa-user"></i> <%= t(".profile", default: "Update your profile") %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to profile_bookings_path do %>
+              <i class="fa fa-calendar-o"></i> <%= t(".booking", default: "See your bookings") %>
             <% end %>
           </li>
           <li>
