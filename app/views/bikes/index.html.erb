@@ -33,7 +33,7 @@
           </li>
         <% end %>
       </ul>
-       <%= link_to "Book", new_bike_booking_path(bike.id), class: "btn btn-success btn-hidden" %>
+       <%= link_to "Book", bike_path(bike.id), class: "btn btn-success btn-hidden" %>
     </div>
   <% end %>
 </div>
@@ -61,10 +61,4 @@
     });
   <% end %>
 <% end %>
-
-<script>
-  $('.product').hover(
-       function(){ $('btn-success').removeClass('btn-hidden') }
-)
-</script>
 
