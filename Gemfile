@@ -19,9 +19,15 @@ gem 'autoprefixer-rails'
 gem 'devise'
 gem 'cloudinary'
 gem 'carrierwave', '~> 0.11.2'
+gem 'omniauth-facebook'
 gem 'attachinary', github: 'assembler/attachinary'
 gem 'jquery-fileupload-rails'
+gem "geocoder"
+gem "gmaps4rails"
 
+source 'https://rails-assets.org' do
+  gem "rails-assets-underscore"
+end
 
 group :development, :test do
   gem 'binding_of_caller'

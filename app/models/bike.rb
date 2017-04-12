@@ -8,7 +8,9 @@ class Bike < ApplicationRecord
   validates :location, presence: true
   has_attachments :photos, maximum: 4
 
-  brands = ["Colnago", "Parlee", "Giant", "Jamis", "Trek", "Brompton", "Tern" ,"Canondale", "Liv", "Fly", "Marin", "Faraday", "Apollo", "Brooklyn Bicycle Co."]
-  sorted_brands = brands.sort
+  # BRANDS = ["Colnago", "Parlee", "Giant", "Jamis", "Trek", "Brompton", "Tern" ,"Canondale", "Liv", "Fly", "Marin", "Faraday", "Apollo", "Brooklyn Bicycle Co."]
+  # SORTED_BRANDS = BRANDS.sort
+  geocoded_by :location
+  after_validation :geocode, if: :location_changed?
 end
 

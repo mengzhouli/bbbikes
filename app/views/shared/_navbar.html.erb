@@ -28,11 +28,18 @@
     <!-- Profile picture and dropdown -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
-        <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+        <% avatar_url = current_user.facebook_picture_url || current_user.photo.url(:bright_face) %>
+        <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li>
-            <%= link_to "#" do %>
-              <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+            <%= link_to profile_bikes_path do %>
+              <i class="fa fa-bicycle"></i> <%= t(".bike", default: "Your Bikes") %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to edit_user_registration_path do %>
+              <i class="fa fa-user"></i> <%= t(".profile", default: "Update your profile") %>
             <% end %>
           </li>
           <li>
@@ -49,7 +56,7 @@
       </div>
     </div>
     <!-- Button (call-to-action) -->
-    <%= link_to t(".top_call_to_action", default: "Post a bike"), new_bike_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
+    <%= link_to t(".top_call_to_action", default: "Post a Bike"), new_bike_path, class: "navbar-wagon-item navbar-wagon-button btn", id: "post" %>
 
   <% else %>
 

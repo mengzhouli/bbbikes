@@ -1,5 +1,5 @@
  <%= simple_form_for(@brand) do |f| %>
-   <%= f.input :brand, collection: Bike::sorted_brands %>
+   <%= f.input :brand, collection: Bike::SORTED_BRANDS %>
    <%= f.input :model %>
    <%= f.input :brand %>
    <%= f.input :bike_kind %>

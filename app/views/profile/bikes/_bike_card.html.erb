@@ -1,0 +1,47 @@
+<div class="card-bike">
+	<div class="row">
+		<div class="col-xs-6">
+			<div class="card-bike-info">
+				<h3>Bike Specifications</h3>
+				<ul class="list-unstyled">
+					<li>Bike Brand: <%= bike.brand %></li>
+					<li>Bike Model: <%= bike.model %></li>
+					<li>Bike Type: <%= bike.bike_kind %></li>
+					<li>Fits Users: <%= bike.height_range %></li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-xs-4">
+			<div class="card-bike-extra">
+				<h4>Bike Accessories</h4>
+				<ul class="list-inline">
+					<li>
+						<% if bike.has_helmet %>
+							Has helment <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+						<% end %>		
+					</li>
+					<li>
+						<% if bike.has_lock %>
+							Has a lock <i class="fa fa-lock" aria-hidden="true"></i>
+						<% end %>
+					</li>
+					<li>
+						<% if bike.has_lights %>
+							Has lights <i class="fa fa-sun-o" aria-hidden="true"></i>
+						<% end %>
+					</li>
+					<li>
+						<% if bike.has_basket %>
+							Has a basket <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+						<% end %>
+					</li>
+					<li>
+						<% if bike.has_bell %>
+							Has a bell <i class="fa fa-bell" aria-hidden="true"></i>
+						<% end %>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
