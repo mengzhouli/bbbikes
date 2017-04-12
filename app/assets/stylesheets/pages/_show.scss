@@ -22,12 +22,14 @@
 }
 
 .bike-details {
-  width:700px;
   height:300px;
   background-color: #F3F6F6;
   border-radius: 2%;
   position: relative;
   text-align: center;
+  & p {
+    font-weight:100;
+  }
 }
 
 .date-range {

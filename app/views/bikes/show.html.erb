@@ -1,7 +1,7 @@
 <div class="wrapper">
   <div class="container">
-    <div class="row justify-content-md-center">
-      <div class="col-md-5 text-center">
+    <div class="row justify-content-md">
+      <div class="col-md-5">
         <%= cl_image_tag @bike.photos[0].path, width: 400, height: 300, crop: :fill, class: "product-photo" %>
       </div>
       <div class="col-md-7">
@@ -20,7 +20,7 @@
             </ul>
           </div>
           <div class="input-group input-daterange date-range">
-            <input type="text" class="form-control" value="2012-04-05">
+            <input type="text" class="form-control" value="yyyy/mm/dd">
             <div class="input-group-addon">to</div>
             <input type="text" class="form-control" value="2012-04-19">
           </div>
