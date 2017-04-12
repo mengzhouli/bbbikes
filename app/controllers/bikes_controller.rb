@@ -1,5 +1,6 @@
 class BikesController < ApplicationController
 	before_action :set_params, only: :create
+  before_action :set_bike_params, only: [:edit, :update]
 	skip_before_action :authenticate_user!, only: :index
 
   def index
@@ -37,6 +38,17 @@ class BikesController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @bike.update(bike_params)
+      redirect_to bike_path(@bike)
+    else
+      render :edit
+    end
+  end
+
   private
 
   def bike_params
@@ -45,6 +57,10 @@ class BikesController < ApplicationController
 
   def set_params
     @user = User.find(current_user.id)
+  end
+
+  def set_bike_params
+    @bike = Bike.find(params[:id])
   end
 
 end
