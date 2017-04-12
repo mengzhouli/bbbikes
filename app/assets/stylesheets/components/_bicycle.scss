@@ -1,4 +1,13 @@
-* {
+// * {
+//   padding: 0;
+//   margin: 0;
+//   box-sizing: content-box;
+//   &:before, &:after {
+//     box-sizing: content-box;
+//   }
+// }
+
+.place * {
   padding: 0;
   margin: 0;
   box-sizing: content-box;
@@ -6,9 +15,6 @@
     box-sizing: content-box;
   }
 }
-
-
-
 
 .stuff {
   position: fixed;
