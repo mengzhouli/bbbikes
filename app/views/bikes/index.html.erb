@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <div class='full-wrapper'>
   <div class="list" id="left">
     <% @bikes.each do |bike| %>
@@ -36,8 +35,12 @@
           <% end %>
         </ul>
          <%= link_to "Book", bike_path(bike.id), class: "btn btn-success btn-hidden" %>
+      </div>
+    <% end %>
+  </div>
 
-<div class="list" id="left">
+
+<!-- <div class="list" id="left">
   <% @bikes.each do |bike| %>
     <div class="product">
       <% if @bike.photos.any? %>
@@ -48,7 +51,7 @@
         <p><%= bike.description %></p>
       </div>
     <% end %>
-  </div>
+  </div> -->
 
 
   <div class="list" id="right"></div>
