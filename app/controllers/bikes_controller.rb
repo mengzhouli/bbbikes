@@ -4,12 +4,13 @@ class BikesController < ApplicationController
 
   def index
     @bikes = Bike.all
+    @brands = Bike::sorted_brands
   end
-  
+
    def show
     @bike = Bike.find(params[:id])
    end
-  
+
   def new
   	@bike = Bike.new
   end
@@ -33,5 +34,4 @@ class BikesController < ApplicationController
   def set_params
     @user = User.find(current_user.id)
   end
-
 end

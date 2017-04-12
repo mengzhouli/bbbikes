@@ -1,8 +1,10 @@
-<%= simple_form_for [@user, @bike] do |f| %>
-  <%= f.input :brand, collection: @brand %>
-  <%= f.input :model %>
-  <%= f.input :brand %>
-  <%= f.input :bike_kind %>
-  <%= f.input :height_range %>
-  <%= f.submit "Update", class: "btn btn-success" %>
-<% end %>
+ <%= simple_form_for(@brand) do |f| %>
+   <%= f.input :brand, collection: Bike::sorted_brands %>
+   <%= f.input :model %>
+   <%= f.input :brand %>
+   <%= f.input :bike_kind %>
+   <%= f.input :height_range %>
+   <%= f.submit "Update", class: "btn btn-success" %>
+ <% end %>
+
+
