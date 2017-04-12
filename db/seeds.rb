@@ -9,9 +9,9 @@
 
 #create random photos array for bike#show testing
 photos_urls = []
-# 4.times do
-#  photos_urls << 'https://unsplash.it/300/200/?random'
-# end
+4.times do
+ photos_urls << 'https://unsplash.it/300/200/?random'
+end
 
 
 #create users

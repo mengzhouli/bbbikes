@@ -38,9 +38,7 @@
 <% content_for(:after_js) do %>
   <%= javascript_tag do %>
     $(document).ready(function() {
-      alert('<%= j @alert_message %>');
       var coord = <%= raw @bike_coordinates.to_json %>;
-      alert('Bike coordinates are ' + coord.lat + ', ' + coord.lng);
     });
   <% end %>
 <% end %>
