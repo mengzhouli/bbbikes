@@ -23,7 +23,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params[:booking][:start_time] = params[:booking][:start_time].to_datetime 
     params.require(:booking).permit(:start_time, :end_time)
   end
 end
