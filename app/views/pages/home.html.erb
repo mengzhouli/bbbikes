@@ -1,17 +1,54 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-6">
+  <div class="row justify-content-md-center">
+    <div class="col-md-6 text-center">
       <div class="logo-div">
         <%= image_tag 'bicycle1600.png', id:'logo-pic' %>
       </div>
     </div>
-    <div class="col-md-6">
-    <div class="text-box text-center">
-      <h1>You'll Go Far.</h1>
-      <h2>BBBikes </h2> <h6>Montréal's Best Bike Sharing Platform</h6>
-      <br>
-      <%= link_to "View All Bikes", bikes_path, class: "navbar-wagon-item navbar-wagon-button all-bikes", id: "signup" %>
-   </div>
+    <div class="col-md-6 text-left">
+      <div class="text-box text-center">
+        <h1>You'll Go Far.</h1>
+        <h2>BBBikes </h2> <h6>Better Bike Sharing</h6>
+        <br>
+        <%= link_to "View All Bikes", bikes_path, class: "navbar-wagon-item navbar-wagon-button all-bikes", id: "signup" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="feature-feature" style="background-color: #E6EAEA; margin:0 auto; height: 350px;">
+  <div class="container">
+    <div class="row">
+     <div class="col-md-4 text-center">
+      <div class="feature-review">
+        <%= image_tag 'find.png', id:'icon' %>
+        <br>
+        <h3>Find</h3>
+        <p>Search your neighborhood for available bikes to rent.</p>
+      </div>
+     </div>
+     <div class="col-md-4 text-center">
+      <div class="feature-review">
+        <%= image_tag 'bike.png', id:'icon' %>
+        <br>
+        <h3>Ride</h3>
+        <p>Cruise the streets of MTL in style.</p>
+      </div>
+     </div>
+     <div class="col-md-4 text-center">
+      <div class="feature-review">
+        <%= image_tag 'money.png', id:'icon' %>
+        <br>
+        <h3>Find</h3>
+        <p>Easily pay for your rentals using our platform.</p>
+      </div>
+     </div>
+    </div>
+  </div>
+</div>
+
+<div class="questions">
+  <h1>Questions? Contact: <%= mail_to 'bbbikes@gmail.com' %></h1>
 </div>
 
 

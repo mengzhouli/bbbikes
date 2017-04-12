@@ -28,3 +28,35 @@
   width: 50% !important;
 }
 
+#icon {
+  width: 100px;
+  height: 100px;
+  padding-bottom: 20px;
+}
+
+
+.feature-review {
+  vertical-align: center;
+  margin: 0 auto;
+  padding-top: 70px;
+}
+
+.questions {
+  height: 500px;
+  text-align: center;
+  position: relative;
+  & h1 {
+    position: absolute;
+    top: 40%;
+    left: 20%
+  }
+}
+
+.feature-review {
+  & p {
+    padding-top: 10px;
+  }
+  & h3 {
+    padding-top: 10px;
+  }
+}
