@@ -3,7 +3,7 @@
     <div class="form-box">
       <%= simple_form_for(@bike) do |f| %>
         <%= f.error_notification %>
-        <%= f.input :brand, label: "Brand", collection: => Bike.all.select("brand)" %>
+        <%= f.input :brand, label: "Brand", :collection => Bike.all.select("brand") %>
         <%= f.input :model, label: "Model", :collection => Bike.all.select("model") %>
         <%= f.input :bike_kind, label: "Type", :collection => Bike.all.select("bike_kind") %>
         <%= f.input :height_range, label: "Rider Height", :collection => %w[140cm 145cm 150cm 155cm 160cm 165cm 170cm 175cm 180cm 185cm 190cm 195cm 200cm] %>
@@ -15,7 +15,7 @@
         <%= f.input :has_basket, label: "Basket", input_html: { checked: @bike.has_basket } %>
         <%= f.input :has_bell, label: "Bell", input_html: { checked: @bike.has_bell } %>
         <%= f.input :photos, as: :attachinary %>
-        <%= f.button :submit, class: "btn btn-success" %>
+        <%= f.button :Update, class: "btn btn-success" %>
       <% end %>
     </div>
   </div>

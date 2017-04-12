@@ -31,11 +31,16 @@
       <div class="dropdown">
         <% avatar_url = current_user.facebook_picture_url || current_user.photo.url(:bright_face) %>
         <% if !avatar_url.nil? %>
+<<<<<<< HEAD
+        <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+        <% end %>
+=======
           <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
         <% else %>
           <img src="http://placehold.it/50x50" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown" >
         <% end %>
 
+>>>>>>> 3c892812bed3c7ceede8763d595ae18033f818a1
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li>
             <%= link_to profile_bikes_path do %>
