@@ -3,9 +3,15 @@ class BikesController < ApplicationController
 	skip_before_action :authenticate_user!, only: :index
 
   def index
+<<<<<<< HEAD
 
     @bikes = Bike.all
     @bikes = Bike.where.not(latitude: nil, longitude: nil)
+=======
+    # @bikes = Bike.where.not(latitude: nil, longitude: nil)
+    @bikes = Bike.all
+    @bike = Bike.find(1)
+>>>>>>> 3c892812bed3c7ceede8763d595ae18033f818a1
     # only grab bikes where they have a valid address
     # flash[:alert] = "You are on the Bikes main page"
     @hash = Gmaps4rails.build_markers(@bikes) do |bike, marker|
@@ -20,6 +26,7 @@ class BikesController < ApplicationController
     @bike = Bike.find(params[:id])
     @alert_message = "You are viewing a #{@bike.brand} bike"
     @bike_coordinates = { lat: @bike.latitude, lng: @bike.longitude }
+    @booking = Booking.new
    end
 
   def new

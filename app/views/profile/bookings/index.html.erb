@@ -1,0 +1,13 @@
+<div class="wrapper">
+	<div class="container text-center">
+		<h1>Your Bookings</h1>
+  		<% current_user.bookings.each do |booking| %>
+  			<ul class="list-unstyled">
+          <li>You are booking a <%= booking.bike.brand %> bike</li>
+  				<li>From: <%= booking.bike.user.email %> </li>
+  				<li>The booking is <%= booking.status %></li>
+  				
+  			</ul>
+  		<% end %>
+	</div>
+</div>
