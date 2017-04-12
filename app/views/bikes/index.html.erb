@@ -19,7 +19,7 @@
 <div class="list" id="right">
 </div>
 
-<% content_for(:js) do %>
+<% content_for(:after_js) do %>
   <script async defer src='https://maps.googleapis.com/maps/api/js?key=<%= ENV['google_maps_key'] %>&callback=initMap'>
   </script>
   <script>
