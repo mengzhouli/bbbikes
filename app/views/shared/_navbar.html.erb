@@ -29,7 +29,9 @@
     <div class="navbar-wagon-item">
       <div class="dropdown">
         <% avatar_url = current_user.facebook_picture_url || current_user.photo.url(:bright_face) %>
-        <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+        <% if !avatar_url.nil? %>
+          <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+        <% end %>
 
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li>
