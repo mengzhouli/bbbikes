@@ -1,0 +1,15 @@
+<h1>Hi <%= @user.email %>,</h1>
+
+<p>
+  find me in app/views/user_mailer/welcome.html.erb
+</p>
+
+<!-- the link to is redirect to local host -->
+<%= link_to "Visit website", root_url %>
+
+<!-- to style this, you must do it in situ in the layout  -->
+
+<!-- to send the email from console -->
+
+<!-- user = User.first
+	UserMailer.welcome(user).deliver_now -->

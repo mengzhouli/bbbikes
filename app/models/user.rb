@@ -9,6 +9,9 @@ class User < ApplicationRecord
   has_many :bikes, dependent: :destroy
   has_many :bookings
   has_many :reviews, through: :bikes
+  after_create :send_welcome_email
+  after_create :subscribe_to_newsletter
+
 
   def self.find_for_facebook_oauth(auth)
     user_params = auth.slice(:provider, :uid)
@@ -29,6 +32,17 @@ class User < ApplicationRecord
     end
 
     return user
+  end
+
+
+  private
+
+  def send_welcome_email
+    UserMailer.welcome(self).deliver_now
+  end
+
+  def subscribe_to_newsletter
+    SubscribeToNewsletterService.new(self).call
   end
   
 end

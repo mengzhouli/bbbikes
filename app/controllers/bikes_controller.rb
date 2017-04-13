@@ -29,7 +29,9 @@ class BikesController < ApplicationController
   def create
   	@bike = Bike.new(bike_params)
   	@bike.user = @user
+
   	if @bike.save
+      BikeMailer.creation_confirmation(@bike).deliver_now
       redirect_to profile_bikes_path
     else
       render :new
