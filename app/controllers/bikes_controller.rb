@@ -5,7 +5,16 @@ class BikesController < ApplicationController
 
   def index
     # @bikes = Bike.where.not(latitude: nil, longitude: nil)
+    @bike_kinds = Bike.all.distinct(:bike_kind).pluck(:bike_kind)
+    @height_ranges = Bike.all.distinct(:height_range).pluck(:height_range)
     @bikes = Bike.all
+    if params[:search] && params[:search][:bike_kind].present?
+      @bikes = @bikes.where(bike_kind: params[:search][:bike_kind])
+    end
+    if params[:search] && params[:search][:height_range].present?
+      @bikes = @bikes.where(height_range: params[:search][:height_range])
+    end
+
     # only grab bikes where they have a valid address
     # flash[:alert] = "You are on the Bikes main page"
     @hash = Gmaps4rails.build_markers(@bikes) do |bike, marker|

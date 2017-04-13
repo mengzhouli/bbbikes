@@ -2,9 +2,6 @@
 
 
 .footer-fixed {
-  position: fixed;
-  left: 0px;
-  bottom: 0px;
   z-index: 1;
   width: 100%;
   background-color: #2C2C2C;
@@ -26,7 +23,7 @@
 #mtl {
   height: 40px;
   width: 40px;
-  right: 3%;
-  top: 18%;
+  right: 1%;
+  margin-top: 9px;
   position: absolute;
 }
