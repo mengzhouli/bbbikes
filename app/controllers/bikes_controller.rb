@@ -6,17 +6,9 @@ class BikesController < ApplicationController
   def index
     # @bikes = Bike.where.not(latitude: nil, longitude: nil)
     @bikes = Bike.all
-    bike_kinds = []
-    Bike.all.each do |bike|
-      bike_kinds << bike.bike_kind
-    end
-    @bike_kinds = bike_kinds.uniq.sort
+    @bike_kinds = Bike.all.distinct(:bike_kind).pluck(:bike_kind).sort
+    @height_ranges = Bike.all.distinct(:height_range).pluck(:height_range).sort
 
-    height_ranges = []
-    Bike.all.each do |bike|
-      height_ranges << bike.height_range
-    end
-    @height_ranges = height_ranges.uniq.sort
     if params[:search] && params[:search][:bike_kind].present?
       @bikes = @bikes.where(bike_kind: params[:search][:bike_kind])
     end

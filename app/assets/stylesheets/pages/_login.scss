@@ -1,0 +1,21 @@
+.login-style {
+  margin-top: 50px;
+  width: 400px;
+  padding: 20px;
+  background-color: rgba(230,234,234, 0.3);
+  border-radius: 2%;
+  border: 2px solid rgb(230,234,234);
+  h2 {
+    text-align: center;
+  }
+  button {
+    text-align: center;
+  }
+}
+
+.btn-confirm {
+  width: 50%;
+  border-spacing: 2px;
+  text-align:center;
+  margin-bottom: 10px;
+}
