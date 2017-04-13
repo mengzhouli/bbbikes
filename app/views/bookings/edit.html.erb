@@ -1,0 +1,9 @@
+<div class="input-group input-daterange date-range text-center">
+	<h1>Modify the dates</h1>
+	<%= simple_form_for [@bike, @booking] do |f| %>
+	  <%= f.error_notification %>
+	  <%= f.input :start_time, as: :string, :input_html => { :class => 'date_picker' } %>
+	  <%= f.input :end_time, as: :string, :input_html => { :class => 'date_picker' } %>
+	  <%= f.button :submit, label: "Modify", class: "btn btn-success" %>
+	<% end %>
+</div>
