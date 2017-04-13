@@ -18,6 +18,18 @@ class BookingsController < ApplicationController
   end
 
   def update
+    @booking = Booking.find(params[:id])
+    @booking.status = "confirmed"
+    @booking.save
+    redirect_to profile_bookings_path
+    # need flash message about whether the confirmation went through
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to profile_bookings_path
+    # need flash message
   end
 
   private

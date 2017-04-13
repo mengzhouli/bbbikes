@@ -22,6 +22,15 @@
               <li>From: <%= booking.start_time %></li>
               <li>To: <%= booking.end_time %></li>
             </ul>
+            <div class="change-booking text-center">
+              <% if booking.status == "pending" %>
+                <%= simple_form_for [bike, booking] do |f| %>
+                  <%= f.error_notification %>
+                  <%= f.button :submit, label: "Confirm", class: "btn btn-success" %>
+                <% end %>
+              <% end %>
+              <%= button_to "Cancel this booking", [bike, booking], confirm: "are you sure", method: :delete, class: "btn btn-danger" %>
+          </div>
           <% end%>
         <% end %>
       <% end %>
