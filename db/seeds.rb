@@ -7,6 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+Review.destroy_all
+Booking.destroy_all
+Bike.destroy_all
+User.destroy_all
+
 #create random photos array for bike#show testing
 photos_urls = []
 4.times do
