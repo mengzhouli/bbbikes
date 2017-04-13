@@ -1,40 +1,25 @@
-<h1><strong>Edit Bike</strong></h1>
-<div class="list">
-    <div class="product">
-    <% if @bike.photos.any? %>
-      <%= cl_image_tag @bike.photos[0].path, class: "product-image" %>
-    <% end %>
-      <div class='product-body'>
-        <h3><%= @bike.brand %></h3><h4><%= @bike.model %></h4>
-        <p><%= @bike.description %></p>
-      </div>
-      <ul class="list-inline product-controls product-controls-hidden hidden-sm hidden-xs">
-        <% if @bike.has_helmet %>
-          <li data-tooltip="Has Helmet" data-tooltip-position="top">
-            <i class="fa fa-shield" aria-hidden="true"></i>
-          </li>
-        <% end %>
-        <% if @bike.has_lock %>
-          <li data-tooltip="Has Lock" data-tooltip-position="top">
-            <i class="fa fa-lock" aria-hidden="true"></i>
-          </li>
-        <% end %>
-        <% if @bike.has_bell %>
-          <li data-tooltip="Has Bell" data-tooltip-position="top">
-            <i class="fa fa-bell" aria-hidden="true"></i>
-          </li>
-        <% end %>
-        <% if @bike.has_basket %>
-          <li data-tooltip="Has Basket" data-tooltip-position="top">
-            <i class="fa fa-shopping-basket" aria-hidden="true"></i>
-          </li>
-        <% end %>
-        <% if @bike.has_lights %>
-          <li data-tooltip="Has Lights" data-tooltip-position="top">
-            <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
-          </li>
-        <% end %>
-      </ul>
-       <%= link_to "Update", bike_path(@bike), class: "btn btn-success btn-hidden" %>
+<center><h1><strong>Edit Bike</strong></h1></center>
+<div class="container">
+  <div class="wrapper">
+    <div class="form-box">
+      <%= simple_form_for(@bike) do |f| %>
+      <%= f.error_notification %>
+      <%= f.input :brand, label: "Brand", placeholder: "Giant" %>
+      <%= f.input :model, label: "Model", placeholder: "Avow Advanced Pro 1" %>
+      <%= f.input :bike_kind, label: "Type", :collection => ["BMX", "Cargo","Cruiser", "Cyclocross", "Electric", "Fat", "Fixie", "Folding", "Hybrid", "Mountain", "Recumbent", "Road", "Tandem", "Touring", "Triathlon", "Unique"] %>
+      <%= f.input :height_range, label: "Rider Height", :collection => %w[140cm 145cm 150cm 155cm 160cm 165cm 170cm 175cm 180cm 185cm 190cm 195cm 200cm] %>
+      <%= f.input :location, label: "Give a full valid drop-off and pick-up address", placeholder: "5333 Casgrain Ave, Montreal, QC H2T 1X6" %>
+      <%= f.input :description, as: :text,  label: "Describe the bike", placeholder: "Giant’s Liv series of bikes are built ground-up with female riders in mind. This makes it a little easier to find that Goldilocks frame size. This Liv Avow model boasts many of the neatly-integrated features that are now superbike hallmarks: front hydration, top-tube bento, behind-the-saddle bottle mount AND a downtube aero bottle. Plus we love that stand-out paint job!" %>
+      <%= f.input :has_helmet, label: "Helmet", input_html: { checked: @bike.has_helmet } %>
+      <%= f.input :has_lock, label: "Lock", input_html: { checked: @bike.has_lock } %>
+      <%= f.input :has_lights, label: "Lights", input_html: { checked: @bike.has_lights } %>
+      <%= f.input :has_basket, label: "Basket", input_html: { checked: @bike.has_basket } %>
+      <%= f.input :has_bell, label: "Bell", input_html: { checked: @bike.has_bell } %>
+      <%= f.input :photos, as: :attachinary %>
+      <%= f.submit "Update", class: "btn btn-success" %>
+      <% end %>
     </div>
+  </div>
 </div>
+</div>
+
