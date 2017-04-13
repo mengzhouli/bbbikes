@@ -7,7 +7,7 @@ class BookingsController < ApplicationController
     @booking.status = "pending"
     @booking.bike = @bike
   	if @booking.save
-      redirect_to profile_bookings_path
+      redirect_to profile_bookings_path, notice: 'You have requested to book a bike!'
     else
       render "bikes/show"
     end
@@ -24,11 +24,11 @@ class BookingsController < ApplicationController
     #if the owner of the bike is the current user (aka owner updating status)
       @booking.status = "confirmed"      
       @booking.save
-      redirect_to profile_bookings_path
+      redirect_to profile_bookings_path, notice: "You have confirmed a booking request for one of your bikes"
     else
     # options for updating dates for the renter
       if @booking = Booking.update(booking_params)
-        redirect_to profile_bookings_path
+        redirect_to profile_bookings_path, notice: "You have changed the dates of your booking"
       else
         render :edit
       end
