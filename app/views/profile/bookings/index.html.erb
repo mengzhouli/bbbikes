@@ -10,8 +10,8 @@
         <div class="change-booking text-center">
               <% if booking.status == "pending" %>
                 <%= link_to "Change the dates", edit_bike_booking_path(booking.bike, booking), class: "btn btn-info" %>
+                <%= button_to "Cancel this booking", [booking.bike, booking], confirm: "are you sure", method: :delete, class: "btn btn-danger" %>
               <% end %>
-              <%= button_to "Cancel this booking", [booking.bike, booking], confirm: "are you sure", method: :delete, class: "btn btn-danger" %>
           </div>
   		<% end %>
 	</div>
