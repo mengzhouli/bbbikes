@@ -1,7 +1,7 @@
 class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :bike
-  has_one :review
+  has_one :review, dependent: :destroy
   validates :start_time, presence: true
   validates :end_time, presence: true
   validates :status, presence: true
