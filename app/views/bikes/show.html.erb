@@ -15,11 +15,31 @@
           <p><%= @bike.description %></p>
           <div class=ammenities>
             <ul class="ammenities-list list-inline">
-              <li data-tooltip="Has Lock" data-tooltip-position="top"><i class="fa fa-lock" aria-hidden="true"></i></li>
-              <li data-tooltip="Has Basket" data-tooltip-position="top"><i class="fa fa-shopping-basket" aria-hidden="true"></i></li>
-              <li data-tooltip="Has Bell" data-tooltip-position="top"><i class="fa fa-bell" aria-hidden="true"></i></li>
-              <li data-tooltip="Has Helmet" data-tooltip-position="top"><i class="fa fa-shield" aria-hidden="true"></i></li>
-              <li data-tooltip="Has Reflectors" data-tooltip-position="top"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></li>
+              <% if @bike.has_helmet %>
+                <li data-tooltip="Has Helmet" data-tooltip-position="top">
+                  <i class="fa fa-shield" aria-hidden="true"></i>
+                </li>
+              <% end %>
+              <% if @bike.has_lock %>
+                <li data-tooltip="Has Lock" data-tooltip-position="top">
+                  <i class="fa fa-lock" aria-hidden="true"></i>
+                </li>
+              <% end %>
+              <% if @bike.has_bell %>
+                <li data-tooltip="Has Bell" data-tooltip-position="top">
+                  <i class="fa fa-bell" aria-hidden="true"></i>
+                </li>
+              <% end %>
+              <% if @bike.has_basket %>
+                <li data-tooltip="Has Basket" data-tooltip-position="top">
+                  <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                </li>
+              <% end %>
+              <% if @bike.has_lights %>
+                <li data-tooltip="Has Lights" data-tooltip-position="top">
+                  <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
+                </li>
+              <% end %>
             </ul>
           </div>
           <div class="input-group input-daterange date-range">
