@@ -1,7 +1,7 @@
 class Bike < ApplicationRecord
   belongs_to :user
-  has_many :reviews
-  has_many :bookings
+  has_many :reviews, dependent: :destroy 
+  has_many :bookings, dependent: :destroy
   validates :brand, presence: true
   validates :model, presence: true
   validates :bike_kind, presence: true

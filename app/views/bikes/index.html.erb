@@ -2,8 +2,8 @@
   <div class="list" id="left">
     <% @bikes.each do |bike| %>
       <div class="product">
-        <% image_url = bike.photos.empty? ? "http://placehold.it/350x150" : bike.photos[1].path %>
-        <%= cl_image_tag bike.photos[1].path, class: "product-image" %>
+        <% image_url = bike.photos.empty? ? "http://placehold.it/350x150" : bike.photos[0].path %>
+        <%= cl_image_tag image_url, class: "product-image" %>
         <div class='product-body'>
           <h3><%= bike.brand %></h3><h4><%= bike.model %></h4>
           <p><%= bike.description %></p>
