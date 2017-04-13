@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row justify-content-md-center">
     <div class="col-md-6 text-center">
-      <div class="logo-div">
+      <div class="logo-div tossing">
         <%= image_tag 'bicycle1600.png', id:'logo-pic' %>
       </div>
     </div>
@@ -10,18 +10,13 @@
         <h1>You'll Go Far.</h1>
         <h2>BBBikes </h2> <h6>Better Bike Sharing</h6>
         <br>
-        <%= link_to "View All Bikes", bikes_path, class: "navbar-wagon-item navbar-wagon-button all-bikes", id: "signup" %>
-      </div>
-    </div>
-  </div>
-  <div class="row justify-content-md-center">
-    <div class="col text-center list-inline">
-      <div class="search">
-        <%= simple_form_for :search, url: bikes_path, method: 'get',  html: {class: 'form-inline'} do |f| %>
-          <%= f.input :bike_kind, collection: @bike_kinds, placeholder: 'Type', label_html: { class: 'label-style'}, input_html: { id: 'input-field' } %>
-          <%= f.input :height_range, collection: @height_ranges, placeholder: 'Height Range', input_html: { id: 'input-field' }, label_html: { class: 'label-style'} %>
-          <%= f.button :submit, class: 'btn btn-default btn-search' %>
-        <% end %>
+        <div class="search">
+          <%= simple_form_for :search, url: bikes_path, method: 'get',  html: {class: 'form-inline'} do |f| %>
+            <%= f.input :bike_kind, collection: @bike_kinds, placeholder: 'Type', label_html: { class: 'label-style'}, input_html: { id: 'input-field' } %>
+            <%= f.input :height_range, collection: @height_ranges, placeholder: 'Height Range', input_html: { id: 'input-field' }, label_html: { class: 'label-style'} %>
+            <%= f.button :submit, class: 'btn btn-default btn-search' %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
@@ -55,11 +50,6 @@
       </div>
      </div>
     </div>
-    <div class="row justify-content-md-center">
-      <div class="col">
-        <h1>Questions? Contact: <%= mail_to 'bbbikes@gmail.com' %></h1>
-      </div>
-    </div>
   </div>
 </div>
 
@@ -68,7 +58,7 @@
     <div class="container">
       <div class="row justify-content-md-center">
         <div class="col">
-          <h1>Questions? Contact: <%= mail_to 'bbbikes@gmail.com' %></h1>
+          <h1>Questions? Contact: <%= link_to 'bbbikes@gmail.com', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ' %></h1>
         </div>
       </div>
     </div>
