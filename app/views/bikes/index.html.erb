@@ -1,5 +1,13 @@
+
 <div class='full-wrapper'>
   <div class="list" id="left">
+    <div class="bikes-search">
+      <%= simple_form_for :search, url: bikes_path, method: 'get', wrapper_html: :inline_form,  html: {class: 'form-inline'} do |f| %>
+        <%= f.input :bike_kind, collection: @bike_kinds, placeholder: 'Type', label_html: { class: 'label-style'}, input_html: { id: 'input-field' } %>
+        <%= f.input :height_range, collection: @height_ranges, placeholder: 'Height Range', input_html: { id: 'input-field' }, label_html: { class: 'label-style'} %>
+        <%= f.button :submit, class: 'btn btn-default btn-search' %>
+      <% end %>
+    </div>
     <% @bikes.each do |bike| %>
       <div class="product">
         <% image_url = bike.photos.empty? ? image_url("bicycle1600.png") : bike.photos[0].path %>
@@ -7,6 +15,7 @@
         <div class='product-body'>
           <h3><%= bike.brand %></h3><h4><%= bike.model %></h4>
           <p><%= bike.description %></p>
+          <p><%= bike.bike_kind %></p>
         </div>
         <ul class="list-inline product-controls product-controls-hidden hidden-sm hidden-xs">
           <% if bike.has_helmet %>
@@ -35,7 +44,7 @@
             </li>
           <% end %>
         </ul>
-         <%= link_to "Book", bike_path(bike.id), class: "btn btn-success btn-hidden" %>
+         <%= link_to "See this bike", bike_path(bike.id), class: "btn btn-success btn-hidden" %>
       </div>
     <% end %>
   </div>

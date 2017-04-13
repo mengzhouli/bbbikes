@@ -1,48 +1,66 @@
 <div class="card-bike">
 	<div class="row">
-		<div class="col-xs-6">
+		<div class="col-xs-12 col-sm-6 col-md-3">
+			<div class="card-bike-pic">
+				<% image_url = bike.photos.empty? ? "http://placehold.it/350x150" : bike.photos[0].path %>
+        		<%= link_to bike_path(bike) do %>
+        			<%= cl_image_tag image_url, class: "product-image" %>
+            	<% end %>
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-3">
 			<div class="card-bike-info">
-				<h3>Bike Specifications</h3>
+				<p><strong><%= bike.description %></strong></p>
+				<p><%= bike.location%></p>
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-3">
+			<div class="card-bike-info">
 				<ul class="list-unstyled">
-					<li>Bike Brand: <%= bike.brand %></li>
-					<li>Bike Model: <%= bike.model %></li>
-					<li>Bike Type: <%= bike.bike_kind %></li>
-					<li>Fits Users: <%= bike.height_range %></li>
+					<li>Bike Brand: <strong><%= bike.brand %></strong></li>
+					<li>Bike Model: <strong><%= bike.model %></strong></li>
+					<li>Bike Type: <strong><%= bike.bike_kind %></strong></li>
+					<li>Fits Users: <strong><%= bike.height_range %></strong></li>
 					<li><%= bike.id %></li>
 				</ul>
 			</div>
 		</div>
-		<div class="col-xs-4">
+		<div class="col-xs-12 col-sm-6 col-md-3">
 			<div class="card-bike-extra">
-				<h4>Bike Accessories</h4>
-				<ul class="list-inline">
-					<li>
-						<% if bike.has_helmet %>
-							Has helment <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-						<% end %>
-					</li>
-					<li>
-						<% if bike.has_lock %>
-							Has a lock <i class="fa fa-lock" aria-hidden="true"></i>
-						<% end %>
-					</li>
-					<li>
-						<% if bike.has_lights %>
-							Has lights <i class="fa fa-sun-o" aria-hidden="true"></i>
-						<% end %>
-					</li>
-					<li>
-						<% if bike.has_basket %>
-							Has a basket <i class="fa fa-shopping-basket" aria-hidden="true"></i>
-						<% end %>
-					</li>
-					<li>
-						<% if bike.has_bell %>
-							Has a bell <i class="fa fa-bell" aria-hidden="true"></i>
-						<% end %>
-          <%= link_to "Edit Bike", edit_bike_path(bike), {class: "btn btn-success"} %>
-					</li>
-				</ul>
+				<div class="row">
+					<div class="col-xs-12 col-sm-6">
+						<ul class="list-inline">
+							<li>
+								<% if bike.has_helmet %>
+									<i class="fa fa-user-circle-o" aria-hidden="true"></i>helmet
+								<% end %>
+							</li>
+							<li>
+								<% if bike.has_lock %>
+									<i class="fa fa-lock" aria-hidden="true"></i>lock
+								<% end %>
+							</li>
+							<li>
+								<% if bike.has_lights %>
+									<i class="fa fa-sun-o" aria-hidden="true"></i>lights
+								<% end %>
+							</li>
+							<li>
+								<% if bike.has_basket %>
+									<i class="fa fa-shopping-basket" aria-hidden="true"></i>basket
+								<% end %>
+							</li>
+							<li>
+								<% if bike.has_bell %>
+									<i class="fa fa-bell" aria-hidden="true"></i>bell
+								<% end %>
+							</li>
+						</ul>
+					</div>
+					<div class="col-xs-12 col-sm-6">
+          				<%= link_to "Edit Bike", edit_bike_path(bike), {class: "btn btn-success"} %>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

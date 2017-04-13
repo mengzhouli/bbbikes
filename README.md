@@ -5,9 +5,9 @@ User Story
 
 1. I can search for bikes using location and time frame options.
 2. I can see bikes on map with price and filter options 
-3. I can view a bike's page
-4. As a user I can login/signup
-5. As a user I can add a bike + information
+3. I can view a bike's page DONE
+4. As a user I can login/signup DONE
+5. As a user I can add a bike + information DONE
 6. As a user I can email/contact bike owner
 7. As a user I can book the bike + pay
 8. As a user I can navigate the website from the navbar
