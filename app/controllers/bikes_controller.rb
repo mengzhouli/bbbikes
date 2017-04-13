@@ -40,6 +40,7 @@ class BikesController < ApplicationController
   	@bike = Bike.new(bike_params)
   	@bike.user = @user
   	if @bike.save
+      flash[:notice] = "You have successfully posted your bike!"
       redirect_to profile_bikes_path
     else
       render :new
@@ -51,6 +52,7 @@ class BikesController < ApplicationController
 
   def update
     if @bike.update(bike_params)
+      flash[:notice] = "You have successfully updated your bike!"
       redirect_to bike_path(@bike)
     else
       render :edit
@@ -72,3 +74,4 @@ class BikesController < ApplicationController
   end
 
 end
+
