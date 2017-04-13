@@ -18,7 +18,7 @@ class BikesController < ApplicationController
 
    def show
     @bike = Bike.find(params[:id])
-    @alert_message = "You are viewing a #{@bike.brand} bike"
+    flash[:notice] = "You are viewing a #{@bike.brand} bike"
     @bike_coordinates = { lat: @bike.latitude, lng: @bike.longitude }
     @booking = Booking.new
    end
