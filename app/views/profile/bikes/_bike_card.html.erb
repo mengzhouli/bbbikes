@@ -19,7 +19,7 @@
 					<li>
 						<% if bike.has_helmet %>
 							Has helment <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-						<% end %>		
+						<% end %>
 					</li>
 					<li>
 						<% if bike.has_lock %>
@@ -40,6 +40,7 @@
 						<% if bike.has_bell %>
 							Has a bell <i class="fa fa-bell" aria-hidden="true"></i>
 						<% end %>
+          <%= link_to "Edit Bike", edit_bike_path(bike), {class: "btn btn-success"} %>
 					</li>
 				</ul>
 			</div>

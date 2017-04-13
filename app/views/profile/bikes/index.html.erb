@@ -4,5 +4,8 @@
   		<% current_user.bikes.each do |bike| %>
         	<%= render 'bike_card', bike: bike %>
   		<% end %>
+    <%#= simple_form_for [@user, @bike] do |f| %>
+      <%#= f.submit "Edit bike", class: "btn btn-primary" %>
+    <%# end %>
 	</div>
 </div>
