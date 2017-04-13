@@ -22,8 +22,8 @@
     <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
       <div class="badge-container">
         <i class="fa fa-envelope-o"></i>
-<!--         <div class="badge badge-blue">3</div>
- -->      </div>
+        <div class="badge badge-blue">3</div>
+      </div>
     <% end %>
 
     <!-- Profile picture and dropdown -->
@@ -33,7 +33,7 @@
         <% if !avatar_url.nil? %>
           <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
         <% else %>
-          <span class="fa fa-user-circle-o large fa-2x" aria-hidden="true" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown" ></span>
+          <span class="fa fa-user-circle-o fa-2x" aria-hidden="true" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown" ></span>
         <% end %>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li>
