@@ -12,7 +12,5 @@ class PagesController < ApplicationController
       height_ranges << bike.height_range
     end
     @height_ranges = height_ranges.uniq.sort
-    # @bike_kinds = Bike.all.distinct(:bike_kind).pluck(:bike_kind)
   end
-    # @height_ranges = Bike.all.distinct(:height_range).pluck(:height_range)
 end
