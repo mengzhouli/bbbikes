@@ -1,8 +1,7 @@
 class BikesController < ApplicationController
 	before_action :set_params, only: :create
-  before_action :set_bike_params, only: [:edit, :update]
-	skip_before_action :authenticate_user!, only: :index
-
+  	before_action :set_bike_params, only: [:edit, :update]
+	skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     # @bikes = Bike.where.not(latitude: nil, longitude: nil)
