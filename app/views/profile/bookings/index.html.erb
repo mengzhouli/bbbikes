@@ -1,13 +1,18 @@
 <div class="wrapper">
 	<div class="container text-center">
 		<h1>Your Bookings</h1>
-  		<% current_user.bookings.each do |booking| %>
+  		<% current_user.bookings.reverse.each do |booking| %>
   			<ul class="list-unstyled">
-          <li>You are booking a <%= booking.bike.brand %> bike</li>
-  				<li>From: <%= booking.bike.user.email %> </li>
-  				<li>The booking is <%= booking.status %></li>
-  				
+          <li>You are booking a <%= booking.bike.brand %> <%= booking.bike.model %>bike from: <%= booking.bike.user.email %> </li>
+          <li><%= booking.start_time %> TO <%= booking.end_time %></li>
+  				<li>The booking is <strong><%= booking.status %></strong> <%= link_to "See bike", bike_path(booking.bike) %></li>
   			</ul>
+        <div class="change-booking text-center">
+              <% if booking.status == "pending" %>
+                <%= link_to "Change the dates", edit_bike_booking_path(booking.bike, booking), class: "btn btn-info" %>
+              <% end %>
+              <%= button_to "Cancel this booking", [booking.bike, booking], confirm: "are you sure", method: :delete, class: "btn btn-danger" %>
+          </div>
   		<% end %>
 	</div>
   <div class="container text-center">
@@ -15,22 +20,22 @@
       <% current_user.bikes.each do |bike| %>
         <% if bike.bookings.any? %>
           <h4>Your <%= bike.brand %> bike has the following bookings</h4>
-          <% bike.bookings.each do |booking|%>
+          <% bike.bookings.reverse.each do |booking|%>
             <ul class="list-unstyled">
-              <li><%= booking.status %></li>
+              <li><strong><%= booking.status %></strong></li>
               <li><%= booking.user.email %> is trying to book</li>
-              <li>From: <%= booking.start_time %></li>
-              <li>To: <%= booking.end_time %></li>
+              <li>From: <%= booking.start_time %> TO <%= booking.end_time %></li>
+              <li><%= link_to "See bike", bike_path(booking.bike) %></li>
             </ul>
             <div class="change-booking text-center">
               <% if booking.status == "pending" %>
                 <%= simple_form_for [bike, booking] do |f| %>
                   <%= f.error_notification %>
-                  <%= f.button :submit, label: "Confirm", class: "btn btn-success" %>
+                  <%= f.button :submit, "Confirm", class: "btn btn-success" %>
                 <% end %>
               <% end %>
               <%= button_to "Cancel this booking", [bike, booking], confirm: "are you sure", method: :delete, class: "btn btn-danger" %>
-          </div>
+            </div>
           <% end%>
         <% end %>
       <% end %>
