@@ -10,4 +10,20 @@
   			</ul>
   		<% end %>
 	</div>
+  <div class="container text-center">
+    <h1>Booking Requests for Your Bikes</h1>
+      <% current_user.bikes.each do |bike| %>
+        <% if bike.bookings.any? %>
+          <h4>Your <%= bike.brand %> bike has the following bookings</h4>
+          <% bike.bookings.each do |booking|%>
+            <ul class="list-unstyled">
+              <li><%= booking.status %></li>
+              <li><%= booking.user.email %> is trying to book</li>
+              <li>From: <%= booking.start_time %></li>
+              <li>To: <%= booking.end_time %></li>
+            </ul>
+          <% end%>
+        <% end %>
+      <% end %>
+  </div>
 </div>

@@ -2,3 +2,61 @@
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
+
+
+.text-box {
+  padding-top: 50px;
+  & h1 {
+    font-weight: bold;
+    font-size: 75px;
+  }
+  & h5 {
+    font-weight: lighter;
+    display: inline;
+  }
+  & h3 {
+    display: inline;
+  }
+}
+
+#logo-pic {
+  width: 70%;
+}
+
+.all-bikes {
+  padding: 15px;
+  width: 50% !important;
+}
+
+#icon {
+  width: 100px;
+  height: 100px;
+  padding-bottom: 20px;
+}
+
+
+.feature-review {
+  vertical-align: center;
+  margin: 0 auto;
+  padding-top: 70px;
+}
+
+.questions {
+  height: 500px;
+  text-align: center;
+  position: relative;
+  & h1 {
+    position: absolute;
+    top: 40%;
+    left: 20%
+  }
+}
+
+.feature-review {
+  & p {
+    padding-top: 10px;
+  }
+  & h3 {
+    padding-top: 10px;
+  }
+}

@@ -3,10 +3,10 @@ class BikesController < ApplicationController
   before_action :set_bike_params, only: [:edit, :update]
 	skip_before_action :authenticate_user!, only: :index
 
+
   def index
     # @bikes = Bike.where.not(latitude: nil, longitude: nil)
     @bikes = Bike.all
-    @bike = Bike.find(1)
     # only grab bikes where they have a valid address
     # flash[:alert] = "You are on the Bikes main page"
     @hash = Gmaps4rails.build_markers(@bikes) do |bike, marker|
