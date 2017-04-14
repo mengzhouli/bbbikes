@@ -74,72 +74,72 @@ bicycles = [
   { :brand => "Colnago",
     :model => "Arabseque",
     :type => "Road",
-    :height_range => ["M", "L", "XL"]
+    :height_range => %w[140cm 145cm 150cm 155cm 160cm 165cm 170cm 175cm 180cm 185cm 190cm 195cm 200cm] %>
   },
   { :brand => "Parlee",
     :model => "Chebacco",
     :type => "Hybrid",
-    :height_range => ["M", "L", "XL"]
+    :height_range => %w[140cm 145cm 150cm 155cm 160cm 165cm 170cm 175cm 180cm 185cm 190cm 195cm 200cm] %>
   },
   { :brand => "Giant",
     :model => "TCR Advanced SL O",
     :type => "Road",
-    :height_range => ["S", "M", "L", "XL"]
+    :height_range => %w[140cm 145cm 150cm 155cm 160cm 165cm 170cm 175cm 180cm 185cm 190cm 195cm 200cm] %>
   },
   { :brand => "Jamis",
     :model => "Xenis Comp Femme",
     :type => "Racing",
-    :height_range => ["M", "L", "XL"]
+    :height_range => %w[140cm 145cm 150cm 155cm 160cm 165cm 170cm 175cm 180cm 185cm 190cm 195cm 200cm] %>
   },
   { :brand => "Trek",
     :model => "Emonda ALR",
     :type => "Racing",
-    :height_range => ["M", "L", "XL"]
+    :height_range => %w[140cm 145cm 150cm 155cm 160cm 165cm 170cm 175cm 180cm 185cm 190cm 195cm 200cm] %>
   },
   { :brand => "Brompton",
     :model => "S Type",
     :type => "Foldable",
-    :height_range => ["S", "M", "L", "XL"]
+    :height_range => %w[140cm 145cm 150cm 155cm 160cm 165cm 170cm 175cm 180cm 185cm 190cm 195cm 200cm] %>
   },
   { :brand => "Tern",
     :model => "Verge",
     :type => "Foldable",
-    :height_range => ["S", "M", "L", "XL"]
+    :height_range => %w[140cm 145cm 150cm 155cm 160cm 165cm 170cm 175cm 180cm 185cm 190cm 195cm 200cm] %>
   },
   { :brand => "Canondale",
     :model => "Bad Habit",
     :type => "Mountain",
-    :height_range => ["S", "M", "L", "XL"]
+    :height_range => %w[140cm 145cm 150cm 155cm 160cm 165cm 170cm 175cm 180cm 185cm 190cm 195cm 200cm] %>
   },
   { :brand => "Liv",
     :model => "Lust Advanced 1",
     :type => "Mountain",
-    :height_range => ["S", "M", "L", "XL"]
+    :height_range => %w[140cm 145cm 150cm 155cm 160cm 165cm 170cm 175cm 180cm 185cm 190cm 195cm 200cm] %>
   },
   { :brand => "Fly",
     :model => "Neutron",
     :type => "BMX",
-    :height_range => ["S", "M", "L", "XL"]
+    :height_range => %w[140cm 145cm 150cm 155cm 160cm 165cm 170cm 175cm 180cm 185cm 190cm 195cm 200cm] %>
   },
   { :brand => "Marin",
     :model => "Fairfax",
     :type => "City",
-    :height_range => ["S", "M", "L", "XL"]
+    :height_range => %w[140cm 145cm 150cm 155cm 160cm 165cm 170cm 175cm 180cm 185cm 190cm 195cm 200cm] %>
   },
   { :brand => "Faraday",
     :model => "Porteur",
     :type => "City",
-    :height_range => ["S", "M", "L", "XL"]
+    :height_range => %w[140cm 145cm 150cm 155cm 160cm 165cm 170cm 175cm 180cm 185cm 190cm 195cm 200cm] %>
   },
   { :brand => "Apollo",
     :model => "Syncro",
     :type => "Tandem",
-    :height_range => ["L", "XL"]
+    :height_range => %w[140cm 145cm 150cm 155cm 160cm 165cm 170cm 175cm 180cm 185cm 190cm 195cm 200cm] %>
   },
   { :brand => "Brooklyn Bicycle Co.",
     :model => "Wythe",
     :type => "City",
-    :height_range => ["S", "M", "L", "XL"]
+    :height_range => %w[140cm 145cm 150cm 155cm 160cm 165cm 170cm 175cm 180cm 185cm 190cm 195cm 200cm] %>
   }
 ]
 
