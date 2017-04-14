@@ -9,45 +9,53 @@
       </div>
       <div class="col-md-7">
         <div class="bike-details">
-          <div class="title">
-            <h2><%= @bike.brand %></h2><h3 id="subtitle"><%= @bike.model %></h3>
-          </div>
-          <p><%= @bike.description %></p>
-          <div class=ammenities>
-            <ul class="ammenities-list list-inline">
-              <% if @bike.has_helmet %>
-                <li data-tooltip="Has Helmet" data-tooltip-position="top">
-                  <i class="fa fa-shield" aria-hidden="true"></i>
-                </li>
-              <% end %>
-              <% if @bike.has_lock %>
-                <li data-tooltip="Has Lock" data-tooltip-position="top">
-                  <i class="fa fa-lock" aria-hidden="true"></i>
-                </li>
-              <% end %>
-              <% if @bike.has_bell %>
-                <li data-tooltip="Has Bell" data-tooltip-position="top">
-                  <i class="fa fa-bell" aria-hidden="true"></i>
-                </li>
-              <% end %>
-              <% if @bike.has_basket %>
-                <li data-tooltip="Has Basket" data-tooltip-position="top">
-                  <i class="fa fa-shopping-basket" aria-hidden="true"></i>
-                </li>
-              <% end %>
-              <% if @bike.has_lights %>
-                <li data-tooltip="Has Lights" data-tooltip-position="top">
-                  <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
-                </li>
-              <% end %>
-            </ul>
+          <div class="text-title">
+            <div class="title">
+              <h2><%= @bike.brand %></h2><h3 id="subtitle"><%= @bike.model %></h3>
+            </div>
+            <p><%= @bike.description %></p>
+            <div class=ammenities>
+              <ul class="ammenities-list list-inline">
+                <% if @bike.has_helmet %>
+                  <li data-tooltip="Has Helmet" data-tooltip-position="top">
+                    <i class="fa fa-shield" aria-hidden="true"></i>
+                  </li>
+                <% end %>
+                <% if @bike.has_lock %>
+                  <li data-tooltip="Has Lock" data-tooltip-position="top">
+                    <i class="fa fa-lock" aria-hidden="true"></i>
+                  </li>
+                <% end %>
+                <% if @bike.has_bell %>
+                  <li data-tooltip="Has Bell" data-tooltip-position="top">
+                    <i class="fa fa-bell" aria-hidden="true"></i>
+                  </li>
+                <% end %>
+                <% if @bike.has_basket %>
+                  <li data-tooltip="Has Basket" data-tooltip-position="top">
+                    <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                  </li>
+                <% end %>
+                <% if @bike.has_lights %>
+                  <li data-tooltip="Has Lights" data-tooltip-position="top">
+                    <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
           </div>
           <div class="input-group input-daterange date-range">
             <%= simple_form_for [@bike, @booking] do |f| %>
               <%= f.error_notification %>
-              <%= f.input :start_time, as: :string, :input_html => { :class => 'date_picker' } %>
-              <%= f.input :end_time, as: :string, :input_html => { :class => 'date_picker' } %>
-              <%= f.button :submit, label: "Book", class: "btn btn-success" %>
+              <div class="col-xs-4">
+                <%= f.input :start_time, as: :string, :input_html => { :class => 'date_picker' } %>
+              </div>
+              <div class="col-xs-4">
+                <%= f.input :end_time, as: :string, :input_html => { :class => 'date_picker' } %>
+              </div>
+              <div class="col-xs-4">
+                <%= f.button :submit, label: "Book", class: "btn btn-success", id: 'booking-button' %>
+              </div>
             <% end %>
           </div>
         </div>

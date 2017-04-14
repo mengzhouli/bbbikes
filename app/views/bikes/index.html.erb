@@ -2,58 +2,65 @@
 <div class='full-wrapper'>
   <div class="list" id="left">
     <div class="bikes-search">
-      <%= simple_form_for :search, url: bikes_path, method: 'get', wrapper_html: :inline_form, html:{class: 'form-inline', id: 'bikeSearchForm'} do |f| %>
-          <div class="form-wrap">
-            <%= f.input :bike_kind, collection: @bike_kinds, placeholder: 'Type', label: false, input_html: { class: 'input-field' }, prompt: 'Type' %>
+      <%= simple_form_for :search, url: bikes_path, method: 'get', wrapper_html: :inline_form, html:{class: 'form-inline materialInlineForm', id: 'bikeSearchForm'} do |f| %>
+          <div class="col-md-4 col-xs-12">
+            <div class="form-wrap">
+              <%= f.input :bike_kind, collection: @bike_kinds, placeholder: 'Type', label: false, input_html: { class: 'input-field' }, prompt: 'Type' %>
+            </div>
           </div>
-          <div class="form-wrap">
-            <%= f.input :height_range, collection: @height_ranges, placeholder: 'Height Range', input_html: { class: 'input-field' }, label: false, prompt: 'Height Range' %>
+          <div class="col-md-4 col-xs-12">
+            <div class="form-wrap">
+              <%= f.input :height_range, collection: @height_ranges, placeholder: 'Height Range', input_html: { class: 'input-field' }, label: false, prompt: 'Height Range' %>
+            </div>
           </div>
-          <div class="form-submit">
-            <%= button_tag(type: 'submit', class: "btn btn-primary btn-search") do %>
-              <i class="fa fa-search" aria-hidden="true"></i> Search
-            <% end %>
+          <div class="col-md-4 col-xs-12">
+            <div class="form-submit">
+              <%= button_tag(type: 'submit', class: "btn btn-primary btn-search") do %>
+                <i class="fa fa-search" aria-hidden="true"></i> Search
+              <% end %>
+            </div>
           </div>
       <% end %>
     </div>
     <% @bikes.each do |bike| %>
-      <div class="product">
-        <% image_url = bike.photos.empty? ? image_url("bicycle1600.png") : bike.photos[0].path %>
-        <%= cl_image_tag image_url, class: "product-image" %>
-        <div class='product-body'>
-          <h3><%= bike.brand %></h3><h4><%= bike.model %></h4>
-          <p><%= bike.description %></p>
-          <p><%= bike.bike_kind %></p>
-        </div>
-        <ul class="list-inline product-controls product-controls-hidden hidden-sm hidden-xs">
-          <% if bike.has_helmet %>
-            <li data-tooltip="Has Helmet" data-tooltip-position="top">
-              <i class="fa fa-shield" aria-hidden="true"></i>
-            </li>
-          <% end %>
-          <% if bike.has_lock %>
-            <li data-tooltip="Has Lock" data-tooltip-position="top">
-              <i class="fa fa-lock" aria-hidden="true"></i>
-            </li>
-          <% end %>
-          <% if bike.has_bell %>
-            <li data-tooltip="Has Bell" data-tooltip-position="top">
-              <i class="fa fa-bell" aria-hidden="true"></i>
-            </li>
-          <% end %>
-          <% if bike.has_basket %>
-            <li data-tooltip="Has Basket" data-tooltip-position="top">
-              <i class="fa fa-shopping-basket" aria-hidden="true"></i>
-            </li>
-          <% end %>
-          <% if bike.has_lights %>
-            <li data-tooltip="Has Lights" data-tooltip-position="top">
-              <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
-            </li>
-          <% end %>
-        </ul>
-         <%= link_to "See this bike", bike_path(bike.id), class: "btn btn-success btn-hidden" %>
-      </div>
+      <%= link_to bike_path(bike.id), class: "product" do %>
+
+          <% image_url = bike.photos.empty? ? image_url("bicycle1600.png") : bike.photos[0].path %>
+          <%= cl_image_tag image_url, class: "product-image" %>
+          <div class='product-body'>
+            <h3><%= bike.brand %></h3><h4><%= bike.model %></h4>
+            <p><%= bike.description %></p>
+            <p><%= bike.bike_kind %></p>
+          </div>
+          <ul class="list-inline product-controls product-controls-hidden hidden-sm hidden-xs">
+            <% if bike.has_helmet %>
+              <li data-tooltip="Has Helmet" data-tooltip-position="top">
+                <i class="fa fa-shield" aria-hidden="true"></i>
+              </li>
+            <% end %>
+            <% if bike.has_lock %>
+              <li data-tooltip="Has Lock" data-tooltip-position="top">
+                <i class="fa fa-lock" aria-hidden="true"></i>
+              </li>
+            <% end %>
+            <% if bike.has_bell %>
+              <li data-tooltip="Has Bell" data-tooltip-position="top">
+                <i class="fa fa-bell" aria-hidden="true"></i>
+              </li>
+            <% end %>
+            <% if bike.has_basket %>
+              <li data-tooltip="Has Basket" data-tooltip-position="top">
+                <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+              </li>
+            <% end %>
+            <% if bike.has_lights %>
+              <li data-tooltip="Has Lights" data-tooltip-position="top">
+                <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
+              </li>
+            <% end %>
+          </ul>
+           <%#= link_to "See this bike", bike_path(bike.id), class: "btn btn-success btn-hidden" %>
+      <% end %>
     <% end %>
   </div>
 

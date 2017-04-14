@@ -6,14 +6,14 @@
       </div>
     </div>
     <div class="col-md-6 col-xs-12">
-      <div class="text-box text-center">
+      <div class="text-box">
         <h1>You'll Go Far.</h1>
         <div class="company-title">
           <h2>BBBikes </h2> <h6>Better Bike Sharing</h6>
         </div>
         <div class="row padder">
           <div class="search">
-            <%= simple_form_for :search, url: bikes_path, method: 'get',  html: {class: 'form-inline', id: "searchForm"} do |f| %>
+            <%= simple_form_for :search, url: bikes_path, method: 'get',  html: {class: 'form-inline materialInlineForm', id: "searchForm"} do |f| %>
             <div class="col-md-4 col-xs-12">
               <div class="form-wrap">
                 <%= f.input :bike_kind, collection: @bike_kinds, placeholder: 'Type', label: false, input_html: { class: 'input-field' }, prompt: 'Type' %>
@@ -25,7 +25,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4 col-xs-12">
+          <div class="col-md-4 col-xs-12 main-search-btn">
             <div class="form-submit">
               <%= button_tag(type: 'submit', class: "btn btn-primary btn-search") do %>
                 <i class="fa fa-search" aria-hidden="true"></i> Search
@@ -38,6 +38,7 @@
     </div>
   </div>
 </div>
+
 
 <div class="bg-features">
   <div class="container">
