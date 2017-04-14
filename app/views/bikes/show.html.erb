@@ -4,7 +4,7 @@
     <div class="row justify-content-md">
       <div class="col-md-5">
         <% if @bike.photos.any? %>
-          <%= cl_image_tag @bike.photos[0].path, width: 400, height: 300, crop: :fill, class: "product-photo" %>
+        <%= cl_image_tag @bike.photos[0].path, width: 400, height: 300, crop: :fill, class: "product-photo" %>
         <% end %>
       </div>
       <div class="col-md-7">
@@ -16,38 +16,38 @@
           <div class=ammenities>
             <ul class="ammenities-list list-inline">
               <% if @bike.has_helmet %>
-                <li data-tooltip="Has Helmet" data-tooltip-position="top">
-                  <i class="fa fa-shield" aria-hidden="true"></i>
-                </li>
+              <li data-tooltip="Has Helmet" data-tooltip-position="top">
+                <i class="fa fa-shield" aria-hidden="true"></i>
+              </li>
               <% end %>
               <% if @bike.has_lock %>
-                <li data-tooltip="Has Lock" data-tooltip-position="top">
-                  <i class="fa fa-lock" aria-hidden="true"></i>
-                </li>
+              <li data-tooltip="Has Lock" data-tooltip-position="top">
+                <i class="fa fa-lock" aria-hidden="true"></i>
+              </li>
               <% end %>
               <% if @bike.has_bell %>
-                <li data-tooltip="Has Bell" data-tooltip-position="top">
-                  <i class="fa fa-bell" aria-hidden="true"></i>
-                </li>
+              <li data-tooltip="Has Bell" data-tooltip-position="top">
+                <i class="fa fa-bell" aria-hidden="true"></i>
+              </li>
               <% end %>
               <% if @bike.has_basket %>
-                <li data-tooltip="Has Basket" data-tooltip-position="top">
-                  <i class="fa fa-shopping-basket" aria-hidden="true"></i>
-                </li>
+              <li data-tooltip="Has Basket" data-tooltip-position="top">
+                <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+              </li>
               <% end %>
               <% if @bike.has_lights %>
-                <li data-tooltip="Has Lights" data-tooltip-position="top">
-                  <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
-                </li>
+              <li data-tooltip="Has Lights" data-tooltip-position="top">
+                <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
+              </li>
               <% end %>
             </ul>
           </div>
           <div class="input-group input-daterange date-range">
             <%= simple_form_for [@bike, @booking] do |f| %>
-              <%= f.error_notification %>
-              <%= f.input :start_time, as: :string, :input_html => { :class => 'date_picker' } %>
-              <%= f.input :end_time, as: :string, :input_html => { :class => 'date_picker' } %>
-              <%= f.button :submit, label: "Book", class: "btn btn-success" %>
+            <%= f.error_notification %>
+            <%= f.input :start_time, as: :string, :input_html => { :class => 'date_picker' } %>
+            <%= f.input :end_time, as: :string, :input_html => { :class => 'date_picker' } %>
+            <%= f.button :submit, label: "Book", class: "btn btn-success" %>
             <% end %>
           </div>
         </div>
@@ -60,11 +60,11 @@
 </div>
 
 <% content_for(:after_js) do %>
-  <%= javascript_tag do %>
-    $(document).ready(function() {
-      var coord = <%= raw @bike_coordinates.to_json %>;
-    });
-  <% end %>
+<%= javascript_tag do %>
+$(document).ready(function() {
+var coord = <%= raw @bike_coordinates.to_json %>;
+});
+<% end %>
 <% end %>
 
 

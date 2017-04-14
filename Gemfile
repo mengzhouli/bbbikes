@@ -25,6 +25,7 @@ gem 'jquery-fileupload-rails'
 gem "geocoder"
 gem "gmaps4rails"
 gem 'jquery-ui-rails'
+gem "jquery-star-rating-rails"
 
 
 source 'https://rails-assets.org' do

@@ -1,0 +1,7 @@
+<h1><center>Write a review!</center></h1>
+
+<%= simple_form_for [@bike, @review] do |f| %>
+  <%= f.input :content, as: :text %>
+  <%= f.input :stars, as: :radio_buttons, collection: 1..5 %>
+  <%= f.submit "Submit", class: "btn btn-primary" %>
+<% end %>

@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-	
+
   def create
     @bike = Bike.find(params[:bike_id])
     @booking = Booking.new(booking_params)
@@ -13,6 +13,11 @@ class BookingsController < ApplicationController
     end
   end
 
+  def show
+    @bike = Bike.find(params[:bike_id])
+    @booking = Booking.find(params[:id])
+  end
+
   def edit
     @booking = Booking.find(params[:id])
     @bike = Bike.find(params[:bike_id])
@@ -22,7 +27,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     if @booking.bike.user == current_user
     #if the owner of the bike is the current user (aka owner updating status)
-      @booking.status = "confirmed"      
+      @booking.status = "confirmed"
       @booking.save
       redirect_to profile_bookings_path, notice: "You have confirmed a booking request for one of your bikes"
     else
