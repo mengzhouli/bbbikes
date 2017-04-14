@@ -15,8 +15,6 @@ class BikesController < ApplicationController
     if params[:search] && params[:search][:height_range].present?
       @bikes = @bikes.where(height_range: params[:search][:height_range])
     end
-  end
-
     # only grab bikes where they have a valid address
     # flash[:alert] = "You are on the Bikes main page"
     @hash = Gmaps4rails.build_markers(@bikes) do |bike, marker|
@@ -25,10 +23,11 @@ class BikesController < ApplicationController
       # marker.infowindow render_to_string(partial: "/bikes/map_box", locals: { bike: bike })
       # need to build map box partial for the above code to work
     end
+  end
+
 
   def show
     @bike = Bike.find(params[:id])
-    flash[:notice] = "You are viewing a #{@bike.brand} bike"
     @bike_coordinates = { lat: @bike.latitude, lng: @bike.longitude }
     @booking = Booking.new
   end

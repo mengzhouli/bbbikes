@@ -33,6 +33,9 @@ body {
     padding-left: 20px;
     position: absolute;
   }
+  .list-inline {
+    margin-bottom: 0;
+  }
 }
 
 .wrapper-foot {
@@ -45,4 +48,28 @@ body {
   right: 1%;
   margin-top: 9px;
   position: absolute;
+}
+
+.list-inline {
+  line-height: 60px;
+}
+
+.fa-youtube-square:hover {
+  color: #e52d27;
+  cursor: pointer;
+}
+
+.fa-facebook-square:hover {
+  color: #3b5998;
+  cursor: pointer;
+}
+
+.fa-twitter-square:hover {
+  color: #4099ff;
+  cursor: pointer;
+}
+
+.fa-instagram:hover {
+  color: #8a3ab9;
+  cursor: pointer;
 }
