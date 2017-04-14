@@ -1,14 +1,16 @@
 <div class="container">
   <div class="row justify-content-md-center">
-    <div class="col-md-6 text-center">
+    <div class="col-md-6 col-xs-12 text-center">
       <div class="logo-div tossing">
         <%= image_tag 'bicycle1600.png', id:'logo-pic' %>
       </div>
     </div>
-    <div class="col-md-6 text-left">
+    <div class="col-md-6 col-xs-12">
       <div class="text-box text-center">
         <h1>You'll Go Far.</h1>
-        <h2>BBBikes </h2> <h6>Better Bike Sharing</h6>
+        <div class="company-title">
+          <h2>BBBikes </h2> <h6>Better Bike Sharing</h6>
+        </div>
         <br>
         <div class="search">
           <%= simple_form_for :search, url: bikes_path, method: 'get', html: {class: 'form-inline'} do |f| %>
@@ -20,38 +22,45 @@
       </div>
     </div>
   </div>
-</div>
 
-<div class="feature-feature">
-  <div class="container">
-    <div class="row">
-     <div class="col-md-4 text-center">
-      <div class="feature-review">
-        <%= image_tag 'find.png', id:'icon' %>
-        <br>
-        <h3>Find</h3>
-        <p>Search your neighborhood for available bikes to rent.</p>
-      </div>
-    </div>
-    <div class="col-md-4 text-center">
-      <div class="feature-review">
-        <%= image_tag 'bike.png', id:'icon' %>
-        <br>
-        <h3>Ride</h3>
-        <p>Cruise the streets of MTL in style.</p>
-      </div>
-    </div>
-    <div class="col-md-4 text-center">
-      <div class="feature-review">
-        <%= image_tag 'money.png', id:'icon' %>
-        <br>
-        <h3>Rent</h3>
-        <p>Easily pay for your rentals using our platform.</p>
-      </div>
+  <hr id="home-divider">
+
+  <div class="row">
+   <div class="col-md-4 col-xs-12 text-center">
+    <div class="feature-review">
+      <%= image_tag 'find.png', id:'icon' %>
+      <br>
+      <h3>Find</h3>
+      <p>Search your neighborhood for available bikes to rent.</p>
     </div>
   </div>
-  <h4 class="text-center">Questions? Contact: <%= link_to 'bbbikes@gmail.com', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', target: '_blank' %></h4>
 </div>
+<div class="col-md-4 text-center">
+  <div class="feature-review">
+    <%= image_tag 'money.png', id:'icon' %>
+    <br>
+    <h3>Rent</h3>
+    <p>Easily pay for your rentals using our platform.</p>
+  </div>
+  <div class="col-md-4 col-xs-12 text-center">
+    <div class="feature-review">
+     <%= image_tag 'bike.png', id:'icon' %>
+     <br>
+     <h3>Ride</h3>
+     <p>Cruise the streets of MTL in style.</p>
+   </div>
+ </div>
+
+ <hr id="home-divider">
+ <div class="row">
+  <div class="col-md-12 col-xs-12 text-center">
+    <div class="questions">
+      <h1>Questions? Contact: <%= link_to 'bbbikes@gmail.com', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',target: '_blank' %></h1>
+    </div>
+  </div>
+</div>
+</div>
+
 
 
 
