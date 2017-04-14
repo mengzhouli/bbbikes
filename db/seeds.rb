@@ -47,10 +47,9 @@ trek.save!
 fara = Bike.new(brand: "Faraday", model: "Porteur", bike_kind: "City", height_range: "145cm", description: "Commuter for a small frame", location: "6704 Clark St, Montreal, QC H2S 3E9", has_lights: true, has_lock: false, has_helmet: false, has_basket: false, has_bell: true)
 fara.user = ashraf
 fara.photo_urls = [
-  Pathname.new("app/assets/images/u1.jpg").open,
-  Pathname.new("app/assets/images/u2.jpg").open,
-  Pathname.new("app/assets/images/u3.jpg").open,
-  Pathname.new("app/assets/images/u4.jpg").open
+  Pathname.new("app/assets/images/golf1.jpg").open,
+  Pathname.new("app/assets/images/golf2.jpg").open,
+  Pathname.new("app/assets/images/y5.jpg").open
 ]
 fara.save!
 
