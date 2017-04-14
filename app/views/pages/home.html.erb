@@ -11,13 +11,28 @@
         <div class="company-title">
           <h2>BBBikes </h2> <h6>Better Bike Sharing</h6>
         </div>
-        <br>
-        <div class="search">
-          <%= simple_form_for :search, url: bikes_path, method: 'get',  html: {class: 'form-inline'} do |f| %>
-            <%= f.input :bike_kind, collection: @bike_kinds, placeholder: 'Type', label_html: { class: 'label-style'}, input_html: { id: 'input-field' } %>
-            <%= f.input :height_range, collection: @height_ranges, placeholder: 'Height Range', input_html: { id: 'input-field' }, label_html: { class: 'label-style'} %>
-            <%= f.button :submit, 'Search', class: 'btn btn-default btn-search' %>
+        <div class="row padder">
+          <div class="search">
+            <%= simple_form_for :search, url: bikes_path, method: 'get',  html: {class: 'form-inline'} do |f| %>
+            <div class="col-md-4 col-xs-12">
+              <div class="form-wrap">
+                <%= f.input :bike_kind, collection: @bike_kinds, placeholder: 'Type', label: false, input_html: { id: 'input-field' }, prompt: 'Type' %>
+              </div>
+            </div>
+            <div class="col-md-4 col-xs-12">
+              <div class="form-wrap">
+                <%= f.input :height_range, collection: @height_ranges, placeholder: 'Height Range', input_html: { id: 'input-field' }, label: false, prompt: 'Height Range' %>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-xs-12">
+            <div class="form-submit">
+              <%= button_tag(type: 'submit', class: "btn btn-primary btn-search") do %>
+                <i class="fa fa-search" aria-hidden="true"></i> Search
+              <% end %>
+            </div>
           <% end %>
+          </div>
         </div>
       </div>
     </div>
