@@ -13,15 +13,15 @@
         </div>
         <div class="row padder">
           <div class="search">
-            <%= simple_form_for :search, url: bikes_path, method: 'get',  html: {class: 'form-inline'} do |f| %>
+            <%= simple_form_for :search, url: bikes_path, method: 'get',  html: {class: 'form-inline', id: "searchForm"} do |f| %>
             <div class="col-md-4 col-xs-12">
               <div class="form-wrap">
-                <%= f.input :bike_kind, collection: @bike_kinds, placeholder: 'Type', label: false, input_html: { id: 'input-field' }, prompt: 'Type' %>
+                <%= f.input :bike_kind, collection: @bike_kinds, placeholder: 'Type', label: false, input_html: { class: 'input-field' }, prompt: 'Type' %>
               </div>
             </div>
             <div class="col-md-4 col-xs-12">
               <div class="form-wrap">
-                <%= f.input :height_range, collection: @height_ranges, placeholder: 'Height Range', input_html: { id: 'input-field' }, label: false, prompt: 'Height Range' %>
+                <%= f.input :height_range, collection: @height_ranges, placeholder: 'Height Range', input_html: { class: 'input-field' }, label: false, prompt: 'Height Range' %>
               </div>
             </div>
           </div>
@@ -37,9 +37,10 @@
       </div>
     </div>
   </div>
+</div>
 
-  <hr id="home-divider">
-
+<div class="bg-features">
+  <div class="container">
     <div class="row">
      <div class="col-md-4 col-xs-12 text-center">
       <div class="feature-review">
@@ -60,16 +61,17 @@
 
      </div>
      <div class="col-md-4 col-xs-12 text-center">
-      <div class="feature-review">
-       <%= image_tag 'bike.png', id:'icon' %>
+        <div class="feature-review">
+          <%= image_tag 'bike.png', id:'icon' %>
           <br>
           <h3>Ride</h3>
           <p>Cruise the streets of MTL in style.</p>
+        </div>
       </div>
     </div>
-
-<hr id="home-divider">
-
+  </div>
+</div>
+<div class="container">
   <div class="row">
     <div class="col-md-12 col-xs-12 text-center">
       <div class="questions">
@@ -78,6 +80,7 @@
     </div>
   </div>
 </div>
+
 
 
 

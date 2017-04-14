@@ -2,14 +2,18 @@
 <div class='full-wrapper'>
   <div class="list" id="left">
     <div class="bikes-search">
-      <%= simple_form_for :search, url: bikes_path, method: 'get', wrapper_html: :inline_form, html:{class: 'form-inline'} do |f| %>
-        <div class="form controls">
-          <%= f.input :bike_kind, collection: @bike_kinds, placeholder: 'Type', label_html: { class: 'label-style'}, input_html: { id: 'input-field' } %>
-          <%= f.input :height_range, collection: @height_ranges, placeholder: 'Height Range', input_html: { id: 'input-field' }, label_html: { class: 'label-style'} %>
-         </div>
-         <div class="form controls">
-          <%= f.button :submit, 'Search', class: 'btn btn-default btn-search' %>
-         </div>
+      <%= simple_form_for :search, url: bikes_path, method: 'get', wrapper_html: :inline_form, html:{class: 'form-inline', id: 'bikeSearchForm'} do |f| %>
+          <div class="form-wrap">
+            <%= f.input :bike_kind, collection: @bike_kinds, placeholder: 'Type', label: false, input_html: { class: 'input-field' }, prompt: 'Type' %>
+          </div>
+          <div class="form-wrap">
+            <%= f.input :height_range, collection: @height_ranges, placeholder: 'Height Range', input_html: { class: 'input-field' }, label: false, prompt: 'Height Range' %>
+          </div>
+          <div class="form-submit">
+            <%= button_tag(type: 'submit', class: "btn btn-primary btn-search") do %>
+              <i class="fa fa-search" aria-hidden="true"></i> Search
+            <% end %>
+          </div>
       <% end %>
     </div>
     <% @bikes.each do |bike| %>
@@ -72,7 +76,6 @@
 </div>
 
 <!-- below is for dynamic map from lecture -->
-
 <% content_for(:after_js) do %>
   <%= javascript_tag do %>
     $(document).ready(function() {
