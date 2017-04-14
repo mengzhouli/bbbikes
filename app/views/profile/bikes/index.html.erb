@@ -1,6 +1,6 @@
 <div class="wrapper">
 	<div class="container text-center">
-		<h1>Your Bikes</h1>
+		<h1>You have <%= pluralize current_user.bikes.size, "bikes" %></h1>
   		<% current_user.bikes.each do |bike| %>
         	<%= render 'bike_card', bike: bike %>
   		<% end %>
