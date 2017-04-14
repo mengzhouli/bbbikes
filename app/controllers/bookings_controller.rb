@@ -45,7 +45,6 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.destroy
     redirect_to profile_bookings_path
-    # need flash message
   end
 
   private

@@ -1,20 +1,20 @@
 class BikesController < ApplicationController
 	before_action :set_params, only: :create
-  	before_action :set_bike_params, only: [:edit, :update]
-	skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :set_bike_params, only: [:edit, :update]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     # @bikes = Bike.where.not(latitude: nil, longitude: nil)
-    @bike_kinds = Bike.all.distinct(:bike_kind).pluck(:bike_kind)
-    @height_ranges = Bike.all.distinct(:height_range).pluck(:height_range)
     @bikes = Bike.all
+    @bike_kinds = Bike.all.distinct(:bike_kind).pluck(:bike_kind).sort
+    @height_ranges = Bike.all.distinct(:height_range).pluck(:height_range).sort
+
     if params[:search] && params[:search][:bike_kind].present?
       @bikes = @bikes.where(bike_kind: params[:search][:bike_kind])
     end
     if params[:search] && params[:search][:height_range].present?
       @bikes = @bikes.where(height_range: params[:search][:height_range])
     end
-
     # only grab bikes where they have a valid address
     # flash[:alert] = "You are on the Bikes main page"
     @hash = Gmaps4rails.build_markers(@bikes) do |bike, marker|
@@ -25,13 +25,14 @@ class BikesController < ApplicationController
     end
   end
 
-   def show
+
+  def show
     @bike = Bike.find(params[:id])
     flash[:notice] = "You are viewing a #{@bike.brand} bike"
     @review = Review.new
     @bike_coordinates = { lat: @bike.latitude, lng: @bike.longitude }
     @booking = Booking.new
-   end
+  end
 
   def new
   	@bike = Bike.new
@@ -73,6 +74,5 @@ class BikesController < ApplicationController
   def set_bike_params
     @bike = Bike.find(params[:id])
   end
-
 end
 

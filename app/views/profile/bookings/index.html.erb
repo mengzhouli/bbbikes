@@ -1,44 +1,62 @@
-<div class="wrapper">
-	<div class="container text-center">
-		<h1>Your Bookings</h1>
-    <% current_user.bookings.reverse.each do |booking| %>
-    <ul class="list-unstyled">
-      <li>You are booking a <%= booking.bike.brand %> <%= booking.bike.model %>bike from: <%= booking.bike.user.email %> </li>
-      <li><%= booking.start_time %> TO <%= booking.end_time %></li>
-      <li>The booking is <strong><%= booking.status %></strong> <%= link_to "See bike", bike_path(booking.bike) %></li>
-    </ul>
-    <div class="change-booking text-center">
-      <% if booking.status == "pending" %>
-      <%= link_to "Change the dates", edit_bike_booking_path(booking.bike, booking), class: "btn btn-info" %>
-      <%= button_to "Cancel this booking", [booking.bike, booking], data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %>
-      <% end %>
-      <%= link_to "Submit a review", new_bike_review_path(booking.bike), class: "btn btn-success" %>
-      <% end %>
+
+<div class="full-wrapper">
+  <div class="booking-list" id="left">
+  	<div class="text-center">
+  		<h3>Your Bookings</h3>
+      <% current_user.bookings.order(updated_at: :desc).each do |booking| %>
+      <%= link_to bike_path(booking.bike) do %>
+      <div class="profile-booking-card">
+       <ul class="list-unstyled">
+        <li><strong><%= booking.status %></strong></li>
+        <li>You are booking a <%= booking.bike.brand %> <%= booking.bike.model %>bike</li>
+        <li>from: <%= booking.bike.user.email %> </li>
+        <li><%= booking.start_time.strftime("%a, %b %d, %Y") %> - <%= booking.end_time.strftime("%a, %b %d, %Y") %></li>
+      </ul>
+      <div class="change-booking text-center">
+        <% if booking.status == "pending" %>
+        <ul class="list-inline">
+          <li>
+            <%= link_to "Change the dates", edit_bike_booking_path(booking.bike, booking), class: "btn btn-default" %>
+          </li>
+          <li>
+            <%= button_to "Cancel this booking", [booking.bike, booking], data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-default btn-pink" %>
+          </li>
+        </ul>
+        <% end %>
+      </div>
     </div>
+    <% end %>
+    <% end %>
   </div>
-  <div class="container text-center">
-    <h1>Booking Requests for Your Bikes</h1>
+</div>
+<div class="booking-list" id="right">
+  <div class="text-center">
+    <h3>Requests for Your Bikes</h3>
     <% current_user.bikes.each do |bike| %>
     <% if bike.bookings.any? %>
     <h4>Your <%= bike.brand %> bike has the following bookings</h4>
-    <% bike.bookings.reverse.each do |booking|%>
-    <ul class="list-unstyled">
-      <li><strong><%= booking.status %></strong></li>
-      <li><%= booking.user.email %> is trying to book</li>
-      <li>From: <%= booking.start_time %> TO <%= booking.end_time %></li>
-      <li><%= link_to "See bike", bike_path(booking.bike) %></li>
-    </ul>
-    <div class="change-booking text-center">
-      <% if booking.status == "pending" %>
-      <%= simple_form_for [bike, booking] do |f| %>
-      <%= f.error_notification %>
-      <%= f.button :submit, "Confirm", class: "btn btn-success" %>
-      <% end %>
-      <% end %>
-      <%= button_to "Cancel this booking", [bike, booking], data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %>
+    <% bike.bookings.order(updated_at: :desc).each do |booking|%>
+    <%= link_to bike_path(booking.bike) do %>
+    <div class="profile-booking-card">
+      <ul class="list-unstyled">
+        <li><strong><%= booking.status %></strong></li>
+        <li><%= booking.user.email %> is trying to book</li>
+        <li>from <%= booking.start_time.strftime("%a, %b %d, %Y") %> to <%= booking.end_time.strftime("%a, %b %d, %Y") %></li>
+      </ul>
+      <div class="change-booking text-center">
+        <% if booking.status == "pending" %>
+        <%= simple_form_for [bike, booking] do |f| %>
+        <%= f.error_notification %>
+        <%= f.button :submit, "Confirm", class: "btn btn-default btn-teal" %>
+        <% end %>
+        <% end %>
+        <%= button_to "Cancel this booking", [bike, booking], data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-default btn-pink" %>
+      </div>
     </div>
+    <% end %>
     <% end%>
     <% end %>
     <% end %>
   </div>
+</div>
 </div>
