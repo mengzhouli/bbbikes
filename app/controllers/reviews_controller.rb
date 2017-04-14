@@ -17,7 +17,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to bike_path(@bike), notice: "Thank you for submitting a review"
     else
-      render 'bikes/show'
+      render :new
     end
   end
 
