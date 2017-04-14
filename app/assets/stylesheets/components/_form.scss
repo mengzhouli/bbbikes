@@ -1,4 +1,4 @@
-#searchForm {
+.materialInlineForm {
   .form-wrap {
     border-bottom: 1px solid #ccc;
     margin-bottom: 20px;
@@ -20,25 +20,28 @@
   }
 }
 
-#bikeSearchForm {
-  .form-wrap {
-    border-bottom: 1px solid #ccc;
-    margin-bottom: 20px;
+ .main-search-btn {
+    margin-bottom:25px;
   }
+// #bikeSearchForm {
+//   .form-wrap {
+//     border-bottom: 1px solid #ccc;
+//     margin-bottom: 20px;
+//     width: 25%;
+//   }
 
-  .input-field {
-    outline: none;
-    border: none;
-    box-shadow: none;
-    border-radius: 0px;
-    font-weight: 100;
-  }
-  .label-style {
-    display: block;
-    padding-bottom: 5px;
-  }
-  .btn-search {
-    width: 100%;
-  }
-}
+//   .input-field {
+//     outline: none;
+//     border: none;
+//     box-shadow: none;
+//     border-radius: 0px;
+//     font-weight: 100;
+//   }
+//   .label-style {
+//     display: inline-block;
+//     padding-bottom: 5px;
+//   }
+//   .btn-search {
+//   }
+// }
 
