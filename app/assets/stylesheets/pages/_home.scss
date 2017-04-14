@@ -10,11 +10,12 @@
     font-weight: bold;
     font-size: 60px;
   }
-  & h5 {
+  & h6 {
     font-weight: lighter;
     display: inline;
+    line-height: 10px;
   }
-  & h3 {
+  & h2 {
     display: inline;
   }
 }
@@ -29,19 +30,16 @@
 }
 
 #icon {
-  width: 100px;
-  height: 100px;
+  width: 125px;
+  height: 125px;
   padding-bottom: 20px;
-}
-
-.center-container {
 }
 
 .feature-review {
   vertical-align: middle;
   margin: 0 auto;
-  padding-top: 70px;
-
+  padding-top: 50px;
+  padding-top: 50px;
 }
 
 .questions-wrapper {
@@ -66,33 +64,35 @@
   padding-bottom: 5px;
 }
 
-.feature-feature {
-  background-color: #E6EAEA;
-  margin:0 auto;
-  height: 350px;
+.company-title {
+  margin-top: 25px;
+}
+
+.col-wrap {
+  background-color: rgba(230,234,234, 0.3);
 }
 
 .questions {
-  height: 500px;
+  height: 375px;
   text-align: center;
-  position: relative;
-  & h1 {
-    position: absolute;
-    top: 40%;
-    left: 20%
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#home-divider {
+  border-color: rgba(187,44,48, 0.2)
 }
 
 .search {
-  margin-bottom: 20px;
+  margin-bottom: 17px;
+  margin-top: 10px;
 }
 
 .feature-review {
-  & p {
-    padding-top: 10px;
-  }
-  & h3 {
-    padding-top: 10px;
+  width: 200px;
+  p {
+    margin-top: 15px;
   }
 }
 
