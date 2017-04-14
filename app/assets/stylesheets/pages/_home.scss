@@ -5,7 +5,7 @@
 
 
 .text-box {
-  padding-top: 50px;
+  margin-top: 68px;
   & h1 {
     font-weight: bold;
     font-size: 60px;
@@ -42,6 +42,16 @@
   padding-top: 50px;
 }
 
+.padder {
+  margin-top: 30px;
+}
+
+.form-wrap {
+  width: 103%;
+  border-bottom: 1px solid black;
+  margin-bottom: 20px;
+}
+
 .questions-wrapper {
   height: 400px;
   text-align: center;
@@ -51,12 +61,15 @@
 }
 
 .btn-search {
-  vertical-align:bottom;
-  border-radius: 3%;
+  width: 100%;
 }
 
 #input-field {
-  width: 200px;
+  outline: none;
+  border: none;
+  box-shadow: none;
+  border-radius: 0px;
+  font-weight: 100;
 }
 
 .label-style {
