@@ -5,12 +5,12 @@
       <%= simple_form_for :search, url: bikes_path, method: 'get', wrapper_html: :inline_form, html:{class: 'form-inline materialInlineForm', id: 'bikeSearchForm'} do |f| %>
           <div class="col-md-4 col-xs-12">
             <div class="form-wrap">
-              <%= f.input :bike_kind, collection: @bike_kinds, placeholder: 'Type', label: false, input_html: { class: 'input-field' }, prompt: 'Type' %>
+              <%= f.input :bike_kind, collection: @bike_kinds, placeholder: 'Type', label: false, input_html: { class: 'input-field' }, wrapper_html: { class: 'label-width' }, prompt: 'Type' %>
             </div>
           </div>
           <div class="col-md-4 col-xs-12">
             <div class="form-wrap">
-              <%= f.input :height_range, collection: @height_ranges, placeholder: 'Height Range', input_html: { class: 'input-field' }, label: false, prompt: 'Height Range' %>
+              <%= f.input :height_range, collection: @height_ranges, placeholder: 'Height Range', input_html: { class: 'input-field label-width' }, wrapper_html: { class: 'label-width' }, label: false, prompt: 'Height Range' %>
             </div>
           </div>
           <div class="col-md-4 col-xs-12">

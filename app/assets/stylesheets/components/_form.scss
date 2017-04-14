@@ -10,6 +10,7 @@
     box-shadow: none;
     border-radius: 0px;
     font-weight: 100;
+    width: 100%;
   }
   .label-style {
     display: block;
@@ -22,6 +23,10 @@
 
  .main-search-btn {
     margin-bottom:25px;
+  }
+
+  .label-width {
+    width:100%;
   }
 // #bikeSearchForm {
 //   .form-wrap {
